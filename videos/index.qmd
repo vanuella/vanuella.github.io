@@ -8,6 +8,12 @@ title-block-banner: true
 
 ::: {#lamemecouleurdecaeur .video-item}
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/cFqMX5_plfQ?si=i0TMDR0xCvzduV2s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+:::
+
+::: {#lamemecouleurdecaeur .video-item}
+
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/yBW5KtucHW0?si=rWDzI8YFoh--DsVs" title="La même couleur de cœur" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
