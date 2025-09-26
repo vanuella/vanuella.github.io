@@ -1,70 +1,569 @@
 ---
-title: "Videos"
-page-layout: full
+title: "Vanuella Watt - Official Music Videos"
 title-block-banner: true
+page-layout: full
+format: html
+lang: fr-NC
+image: "https://i.ytimg.com/vi/cFqMX5_plfQ/maxresdefault.jpg"
+twitter-card: true
+canonical-url: "https://www.vanuella.com/videos/"
+keywords:
+- "Vanuella Watt"
+- "La même couleur de cœur"
+- "Respire"
+- "Oceania Hymn"
+- "Nouvelle-Calédonie music"
+- "New Caledonia artist"
+- "chanson engagée"
+- "French music videos"
+- "Pacific music"
+- "humanitarian ballad"
+- "resilience anthem"
+- "musique francophone"
+- "engaged music"
+- "peace songs"
+- "unity songs"
 ---
 
-::: {layout-ncol=3}
 
-::: {#lamemecouleurdecaeur .video-item}
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/cFqMX5_plfQ?si=i0TMDR0xCvzduV2s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<style>
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+color: var(--text-color);
+line-height: 1.6;
+min-height: 100vh;
+}
+.container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 2rem 1rem;
+}
+.header {
+text-align: center;
+margin-bottom: 3rem;
+padding: 2rem;
+background: linear-gradient(135deg, var(--accent-color-primary), #ff8c42);
+border-radius: 20px;
+box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+}
+.header h1 {
+font-size: 2.5rem;
+margin-bottom: 0.5rem;
+text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+.header p {
+font-size: 1.1rem;
+opacity: 0.9;
+}
+.video-grid {
+display: grid;
+grid-template-columns: 1fr;
+gap: 2rem;
+}
+@media (min-width: 768px) {
+.video-grid {
+grid-template-columns: 1fr 1fr;
+}
+}
+@media (min-width: 1024px) {
+.video-grid {
+grid-template-columns: repeat(3, 1fr);
+}
+}
+.video-card {
+background: var(--bg-card);
+border: 1px solid var(--border-color-light);
+border-radius: 20px;
+box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+overflow: hidden;
+transition: all 0.3s ease;
+position: relative;
+}
+.video-card:hover {
+background: var(--bg-card-hover);
+box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+transform: translateY(-5px);
+}
+.video-embed {
+position: relative;
+width: 100%;
+aspect-ratio: 16 / 9;
+background: #000;
+overflow: hidden;
+}
+.video-embed iframe {
+width: 100%;
+height: 100%;
+border: 0;
+}
+.video-body {
+padding: 1.5rem;
+}
+.video-title {
+font-size: 1.2rem;
+font-weight: 700;
+color: var(--text-color-headings);
+margin-bottom: 1rem;
+line-height: 1.3;
+}
+.video-description {
+font-size: 0.9rem;
+color: var(--text-color-muted);
+line-height: 1.5;
+margin-bottom: 1rem;
+display: -webkit-box;
+-webkit-line-clamp: 4;
+-webkit-box-orient: vertical;
+overflow: hidden;
+}
+.video-description.expanded {
+display: block;
+-webkit-line-clamp: unset;
+}
+.expand-btn {
+color: var(--accent-color-primary);
+background: none;
+border: none;
+cursor: pointer;
+font-size: 0.85rem;
+margin-top: 0.5rem;
+text-decoration: underline;
+}
+.expand-btn:hover {
+color: #ff8c42;
+}
+.badges {
+display: flex;
+flex-wrap: wrap;
+gap: 0.5rem;
+margin: 1rem 0;
+}
+.badge {
+font-size: 0.7rem;
+padding: 0.3rem 0.6rem;
+border-radius: 15px;
+background: linear-gradient(135deg, var(--accent-color-primary), #ff8c42);
+color: white;
+font-weight: 600;
+text-transform: uppercase;
+letter-spacing: 0.5px;
+}
+.location {
+position: absolute;
+top: 1rem;
+right: 1rem;
+background: rgba(0, 0, 0, 0.8);
+color: white;
+padding: 0.3rem 0.6rem;
+border-radius: 10px;
+font-size: 0.7rem;
+backdrop-filter: blur(10px);
+}
+.cta-buttons {
+display: flex;
+gap: 0.5rem;
+margin-top: 1rem;
+flex-wrap: wrap;
+}
+.btn {
+display: inline-flex;
+align-items: center;
+padding: 0.6rem 1rem;
+border-radius: 12px;
+border: 1px solid var(--accent-color-primary);
+color: var(--accent-color-primary);
+text-decoration: none;
+font-weight: 600;
+font-size: 0.85rem;
+transition: all 0.2s ease;
+background: transparent;
+}
+.btn:hover {
+background: var(--accent-color-primary);
+color: white;
+transform: translateY(-1px);
+}
+.section-title {
+font-size: 2rem;
+margin: 3rem 0 2rem 0;
+text-align: center;
+color: var(--accent-color-primary);
+text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+.stats {
+text-align: center;
+margin: 2rem 0;
+padding: 1rem;
+background: rgba(255, 107, 53, 0.1);
+border-radius: 15px;
+border: 1px solid rgba(255, 107, 53, 0.2);
+}
+.stats h3 {
+color: var(--accent-color-primary);
+margin-bottom: 0.5rem;
+}
+</style>
+
+
+
+
+## La même couleur de cœur — Official Videos
+
+*A cinematic humanitarian ballad born from urban unrest, reminding us that "blood has the same color — and so do our hearts." This engaged song calls for compassion and unity in times of division.*
+
+::: {.video-grid}
+::: {.video-card}
+<div class="video-embed">
+<iframe src="https://www.youtube.com/embed/yBW5KtucHW0?rel=0" 
+        title="La même couleur de cœur - Official Music Video by Vanuella Watt"
+        allowfullscreen loading="lazy"></iframe>
+</div>
+
+<div class="video-body">
+### La même couleur de cœur – Official Clip
+
+La même couleur de cœur est mon cri de compassion né des ruines d'une ville en flammes. Une ballade cinématographique où chaque battement rappelle que le sang a la même couleur — et nos cœurs aussi. La chanson rend hommage aux victimes civiles, aux enfants réveillés par les tirs, et appelle au pardon collectif.
+
+**Artiste:** Vanuella Watt  
+**Auteure-compositrice:** Vanuella Watt © 2025  
+**Genre:** Ballade humanitaire / Dark-ambient orchestral  
+**Durée:** 4 min 27  
+**Sortie digitale:** 1 août 2025
+
+<div class="badges">
+<span class="badge">#VanuellaWatt</span>
+<span class="badge">#LaMemeCouleurDeCoeur</span>
+<span class="badge">#MusiqueUrbaine</span>
+<span class="badge">#NouveautéMusicale</span>
+<span class="badge">#ChansonEngagée</span>
+</div>
+
+<div class="cta-buttons">
+[Watch on YouTube]{.btn target="_blank" rel="noopener" href="https://youtu.be/yBW5KtucHW0"}
+[Stream on All Platforms]{.btn target="_blank" rel="noopener" href="https://bfan.link/la-meme-couleur-de-coeur"}
+[Instagram]{.btn target="_blank" rel="noopener" href="https://instagram.com/vanuella.watt"}
+</div>
+
+<div class="credits">
+Video Production: thedatashrink™ • www.thedatashrink.com
+</div>
+</div>
+:::
+
+::: {.video-card}
+<div class="video-embed">
+<iframe src="https://www.youtube.com/embed/cFqMX5_plfQ?rel=0"
+        title="La même couleur de cœur Live by Vanuella Watt"
+        allowfullscreen loading="lazy"></iframe>
+</div>
+
+<div class="video-body">
+### La même couleur de cœur – Live (Paris)
+
+Une chanson engagée francophone née au cœur des émeutes : un témoignage artistique sur ce que l'on ressent en période de crise, de conflit ou de guerre civile. Cette ballade cinématographique porte un message simple et puissant : l'amour est plus fort que tout. Elle rend hommage aux victimes civiles, aux enfants réveillés par les tirs, aux mères qui ont peur, et appelle à la résilience, au pardon et à la réconciliation — car le sang a la même couleur, et nos cœurs aussi.
+
+**Pourquoi cette chanson ?**  
+Après avoir vécu personnellement des émeutes dans mon pays, j'ai voulu « laisser une trace » : être la voix et les yeux de l'histoire à travers la musique. Cette performance live est un cri de compassion pour celles et ceux qui traversent l'enfer d'une humanité brisée, avec l'espoir d'un avenir à reconstruire.
+
+<div class="badges">
+<span class="badge">#ChansonEngagée</span>
+<span class="badge">#MusiqueFrancophone</span>
+<span class="badge">#Paix</span>
+<span class="badge">#Réconciliation</span>
+<span class="badge">#Résilience</span>
+<span class="badge">#Pardon</span>
+<span class="badge">#Humanité</span>
+<span class="badge">#LiveParis</span>
+<span class="badge">#BalladeCiné</span>
+</div>
+
+<div class="cta-buttons">
+[Watch Live Performance]{.btn target="_blank" rel="noopener" href="https://youtu.be/cFqMX5_plfQ"}
+[Stream on All Platforms]{.btn target="_blank" rel="noopener" href="https://bfan.link/la-meme-couleur-de-coeur"}
+[Discover Vanuella's Universe]{.btn target="_blank" rel="noopener" href="https://www.vanuella.com"}
+</div>
+</div>
+:::
+
+::: {.video-card}
+<div class="video-embed">
+<iframe src="https://www.youtube.com/embed/Txm6daQ48EM?rel=0"
+        title="La même couleur de cœur carusel by Vanuella Watt"
+        allowfullscreen loading="lazy"></iframe>
+</div>
+
+<div class="video-body">
+### La même couleur de cœur – Carusel
+
+Une chanson-poème sur notre humanité partagée au milieu des crises urbaines. Tourné dans les rues de Noumea, ce clip capture la résilience des âmes dans l'adversité.
+
+**Paroles & Musique:** Vanuella Watt
+
+Salut mes ptits loups! Le Jour J est arrivé! Vous pouvez écouter et liker mon nouveau single sur YouTube et toutes les autres plate-formes!!! Svp n'oubliez pas d'y ajouter vos commentaires positifs et de partager autour de vous! Merci infiniment à vous ! Musicalement, Vanuella 🎼❤️🙏
+
+<div class="badges">
+<span class="badge">#VanuellaWatt</span>
+<span class="badge">#LaMemeCouleurDeCoeur</span>
+<span class="badge">#MusiqueUrbaine</span>
+<span class="badge">#ChansonEngagée</span>
+<span class="badge">#UrbanPoetry</span>
+</div>
+
+<div class="cta-buttons">
+[Watch Carusel Version]{.btn target="_blank" rel="noopener" href="https://youtu.be/Txm6daQ48EM"}
+[Stream on All Platforms]{.btn target="_blank" rel="noopener" href="https://bfan.link/la-meme-couleur-de-coeur"}
+[Discover Vanuella's Universe]{.btn target="_blank" rel="noopener" href="https://www.vanuella.com"}
+</div>
+</div>
+:::
+
+::: {.video-card}
+<div class="video-embed">
+<iframe src="https://www.youtube.com/embed/4MuJApIbU9M?rel=0"
+        title="🌿Inspiration au bord de la rivière ✨ Nature de Nouvelle-Calédonie"
+        allowfullscreen loading="lazy"></iframe>
+</div>
+
+<div class="video-body">
+### 🌿 Inspiration au bord de la rivière ✨
+
+**Nature de Nouvelle-Calédonie & La même couleur de cœur 🎶**
+
+Salut mes p'tits loups ! 🌿 Aujourd'hui, je me ressource en pleine nature, face à une rivière paisible et un îlot de Nouvelle-Calédonie. Cette terre magnifique est une source d'inspiration infinie : elle nous rappelle que la nature est notre alliée, qu'elle nourrit nos rêves et nous unit. 🌊🌺
+
+Dans ce moment de sérénité, je souhaite à chacun de vous le meilleur 🌍💖. Que l'amour, l'espoir et la beauté de la vie vous accompagnent.
+
+Mon nouveau single "La même couleur de cœur" porte exactement ce message d'humanité et de connexion universelle. 🎶
+
+<div class="badges">
+<span class="badge">#NouvelleCalédonie</span>
+<span class="badge">#VanuellaWatt</span>
+<span class="badge">#LaMemeCouleurDeCoeur</span>
+<span class="badge">#Nature</span>
+<span class="badge">#Inspiration</span>
+<span class="badge">#Hope</span>
+<span class="badge">#SingerSongwriter</span>
+<span class="badge">#Humanité</span>
+</div>
+
+<div class="cta-buttons">
+[Watch Riverside Content]{.btn target="_blank" rel="noopener" href="https://youtu.be/4MuJApIbU9M"}
+[Stream the Song]{.btn target="_blank" rel="noopener" href="https://bfan.link/la-meme-couleur-de-coeur"}
+</div>
+</div>
+:::
+
+::: {.video-card}
+<div class="video-embed">
+<iframe src="https://www.youtube.com/embed/A6SHgx8z9jI?rel=0"
+        title="🌅 Coucher de soleil en bungalow ✨ Nouvelle-Calédonie"
+        allowfullscreen loading="lazy"></iframe>
+</div>
+
+<div class="video-body">
+### 🌅 Coucher de soleil en bungalow ✨
+
+**Nouvelle-Calédonie & son nouveau single La même couleur de cœur 🎶**
+
+Salut mes p'tits loups ! 🌺 Ce soir, je m'installe dans un bungalow face au coucher de soleil en Nouvelle-Calédonie. Le ciel s'embrase de couleurs, et ce moment de paix et de beauté m'inspire profondément. 🌅✨
+
+En savourant ce temps suspendu, je pense à mon nouveau single "La même couleur de cœur", une chanson qui parle d'espoir, d'amour et d'unité. J'espère que vous ressentirez la même émotion et que ce morceau vous apportera un rayon de lumière. 💖
+
+<div class="badges">
+<span class="badge">#NouvelleCalédonie</span>
+<span class="badge">#VanuellaWatt</span>
+<span class="badge">#LaMemeCouleurDeCoeur</span>
+<span class="badge">#SunsetVibes</span>
+<span class="badge">#BungalowLife</span>
+<span class="badge">#NewSong</span>
+<span class="badge">#Hope</span>
+<span class="badge">#SingerSongwriter</span>
+</div>
+
+<div class="cta-buttons">
+[Watch Sunset Content]{.btn target="_blank" rel="noopener" href="https://youtu.be/A6SHgx8z9jI"}
+[Stream the Song]{.btn target="_blank" rel="noopener" href="https://bfan.link/la-meme-couleur-de-coeur"}
+</div>
+</div>
+:::
+
+::: {.video-card}
+<div class="video-embed">
+<iframe src="https://www.youtube.com/embed/hwX1LbjGePs?rel=0"
+        title="✨ Découvrez la Piscine du Méridien en Nouvelle-Calédonie"
+        allowfullscreen loading="lazy"></iframe>
+</div>
+
+<div class="video-body">
+### ✨ Découvrez la Piscine du Méridien + Nouveau Single
+
+**La même couleur de cœur 🎶**
+
+Salut mes p'tits loups ! 🌺 Aujourd'hui, je vous emmène devant les magnifiques piscines du Méridien, un véritable joyau de Nouvelle-Calédonie. Avec moi, découvrez cette île unique, un trésor à la fois, et partagez un moment d'évasion musicale et festive.
+
+🎶 Pour célébrer cet instant, je vous invite aussi à écouter mon nouveau single "La même couleur de cœur"
+
+Merci du fond du cœur pour vos écoutes, vos likes, vos partages et vos commentaires 💖 Ensemble, faisons voyager la musique et l'amour à travers le monde 🌍✨
+
+<div class="badges">
+<span class="badge">#NouvelleCalédonie</span>
+<span class="badge">#VanuellaWatt</span>
+<span class="badge">#LaMemeCouleurDeCoeur</span>
+<span class="badge">#MeridienNoumea</span>
+<span class="badge">#MusicVideo</span>
+<span class="badge">#NewSong</span>
+<span class="badge">#SingerSongwriter</span>
+<span class="badge">#Humanité</span>
+<span class="badge">#Découverte</span>
+</div>
+
+<div class="cta-buttons">
+[Watch Discovery Content]{.btn target="_blank" rel="noopener" href="https://youtu.be/hwX1LbjGePs"}
+[Stream the Song]{.btn target="_blank" rel="noopener" href="https://bfan.link/la-meme-couleur-de-coeur"}
+</div>
+</div>
+:::
 
 :::
 
-::: {#lamemecouleurdecaeur .video-item}
+## Respire — Resilience Anthem
 
+*"A Symphony of Survival" — This resilience anthem delivers the powerful message: "Resist, breathe, give yourself the chance to start all over again."*
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/yBW5KtucHW0?si=rWDzI8YFoh--DsVs" title="La même couleur de cœur" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+::: {.video-grid}
+::: {.video-card}
+<div class="video-embed">
+<iframe src="https://www.youtube.com/embed/ukm3n2Fpdck?rel=0"
+        title="Respire - Official Music Video by Vanuella Watt"
+        allowfullscreen loading="lazy"></iframe>
+</div>
 
-:::
+<div class="video-body">
+### Respire – A Symphony of Survival
 
-::: {#lamemecouleurdecaeur .video-item}
+Vanuella Watt's Respire isn't just a song—it's a musical lifeline thrown to anyone struggling to stay afloat. The track, composed by Stéphanie Watt and musical arrangements done by Philippe Léger, is a masterful blend of raw emotion and uplifting energy. The lyrics speak to the universal experience of overcoming adversity, with lines like "Il y a des matins où les mots sont vides" (There are mornings where words are empty) and "Respire, donne-toi la chance de tout recommencer" (Breathe, give yourself a chance to start over) resonating deeply with listeners.
 
+The song's music video, filmed on a beach at sunset, captures the emotional depth of the lyrics. Watt's powerful vocals convey a potent mix of pain, determination, and hope, making Respire an anthem for resilience. But Respire is more than just a song about hardship—it's a testament to the human spirit's capacity for perseverance.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3vSbm_e7-7A?si=VMfsibXxg7MbzKz-" title="La même couleur de cœur noir" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+**Key Lyrics:**  
+*"Résiste, respire, donne-toi la chance de tout recommencer"*  
+*"Je te donne ma force tu peux encore tout changer"*
 
-:::
+<div class="badges">
+<span class="badge">#Résilience</span>
+<span class="badge">#Respire</span>
+<span class="badge">#Hymne</span>
+<span class="badge">#Empowerment</span>
+<span class="badge">#SunsetVideo</span>
+</div>
 
-::: {#lamemecouleurdecaeur .video-item}
+<div class="cta-buttons">
+[Watch on YouTube]{.btn target="_blank" rel="noopener" href="https://youtu.be/ukm3n2Fpdck"}
+[Instagram]{.btn target="_blank" rel="noopener" href="https://instagram.com/vanuella.watt"}
+</div>
 
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/VNXhpotqZ9w?si=S22TnmmaI9QoqcTZ" title="La même couleur de cœur update" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-:::
-
-::: {#lamemecouleurdecaeur .video-item}
-
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/HspoElb07Y8?si=8mqyhKXCawd0TAjJ" title="La même couleur de cœur city fire" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-:::
-
-::: {#lamemecouleurdecaeur .video-item}
-
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/lXq0o2v2ogI?si=jyjdcrenQE39LoFP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-:::
-
-
-::: {#Respire1 .video-item}
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/59LXID6Cos8?si=4InlrZ_8Yxw2fKFF" title="Une femme court désespérément à travers les rues en flammes pour sauver son enfant" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen> </iframe>
-
-:::
-
-::: {#Respire2 .video-item}
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ukm3n2Fpdck?si=YciC5u1vMopexIRa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-:::
-
-::: {#oceania_hymn .video-item}
-
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/cHpqMQN3uIw?si=XKsWL-jMPtB3MytN" title="OCEANIA A HYMN FOR THE PACIFIC (Official Video Clip)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+<div class="credits">
+Composition: Vanuella • Lyrics: Vanuella • Production: thedatashrink
+</div>
+</div>
 :::
 
 
 :::
+
+## Behind the Scenes — New Caledonia Content
+
+*Discovering the jewel of New Caledonia with musical celebration*
+
+::: {.video-grid}
+
+
+::: {.video-card}
+<div class="video-embed" style="background: linear-gradient(135deg, #ff6b35, #ff8c42); display: flex; align-items: center; justify-content: center;">
+<div style="text-align: center; color: white; padding: 1rem;">
+<h3>More Content Coming Soon</h3>
+<p>Stay tuned for new music videos and behind-the-scenes content</p>
+</div>
+</div>
+
+<div class="video-body">
+### Future Releases
+
+Vanuella Watt continues to create powerful music that speaks to the human experience. Subscribe to her channels to be the first to see new content.
+
+<div class="badges">
+<span class="badge">#ComingSoon</span>
+<span class="badge">#NewMusic</span>
+<span class="badge">#VanuellaWatt</span>
+</div>
+
+<div class="cta-buttons">
+[Official Website]{.btn target="_blank" rel="noopener" href="https://www.vanuella.com"}
+[Follow on Instagram]{.btn target="_blank" rel="noopener" href="https://instagram.com/vanuella.watt"}
+</div>
+</div>
+:::
+
+::: {.video-card}
+<div class="video-embed" style="background: linear-gradient(135deg, #1a1a1a, #2a2a2a); display: flex; align-items: center; justify-content: center;">
+<div style="text-align: center; color: white; padding: 1rem;">
+<h3>Exclusive Content</h3>
+<p>Behind-the-scenes and exclusive performances</p>
+</div>
+</div>
+
+<div class="video-body">
+### Exclusive Performances
+
+Get access to exclusive performances and behind-the-scenes content that showcases Vanuella's creative process and connection to New Caledonia.
+
+<div class="badges">
+<span class="badge">#Exclusive</span>
+<span class="badge">#BehindTheScenes</span>
+<span class="badge">#VanuellaWatt</span>
+</div>
+
+<div class="cta-buttons">
+[Official Website]{.btn target="_blank" rel="noopener" href="https://www.vanuella.com"}
+[YouTube Channel]{.btn target="_blank" rel="noopener" href="https://youtube.com"}
+</div>
+</div>
+:::
+:::
+
+
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Vanuella Watt - Official Music Videos",
+      "description": "Complete collection of official music videos by Vanuella Watt, featuring La même couleur de cœur, Respire, and content from New Caledonia",
+      "url": "https://www.vanuella.com/videos/",
+      "inLanguage": ["fr", "en"],
+      "isPartOf": { 
+        "@type": "WebSite", 
+        "name": "Vanuella Watt Official", 
+        "url": "https://www.vanuella.com" 
+      },
+      "keywords": "Vanuella Watt, La même couleur de cœur, Respire, New Caledonia music, chanson engagée, French Pacific music, humanitarian ballad, resilience anthem",
+      "author": {
+        "@type": "Person",
+        "name": "Vanuella Watt",
+        "sameAs": [
+          "https://instagram.com/vanuella.watt",
+          "https://tiktok.com/@vanuellawatt",
+          "https://twitter.com/vanuellasing"
+        ]
+      }
+    }
+</script>
+
