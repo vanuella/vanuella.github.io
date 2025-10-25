@@ -221,6 +221,49 @@ margin-bottom: 0.5rem;
 *A cinematic humanitarian ballad born from urban unrest, reminding us that "blood has the same color — and so do our hearts." This engaged song calls for compassion and unity in times of division.*
 
 ::: {.video-grid}
+
+
+::: {.video-card}
+<div class="video-embed">
+<iframe src="https://www.youtube.com/embed/XY7NiPq9Cyg?si=SXpKxkE_dbVKxOuI"  
+        title="La même couleur de cœur - L'invitée du matin RRB Interview with Vanuella Watt"
+        allowfullscreen loading="lazy"></iframe>
+</div>
+
+<div class="video-body">
+### La même couleur de cœur – L'invitée du matin RRB
+
+Découvrez l'histoire derrière la chanson. Dans cette interview exclusive pour RRB, Vanuella Watt revient sur la genèse de son titre poignant **"La même couleur de cœur"**. Elle partage les émotions, les inspirations et le message humanitaire qui ont guidé la création de cette ballade née de l'observation d'une ville en conflit.
+
+**Artiste:** Vanuella Watt  
+**Auteure-compositrice:** Vanuella Watt © 2025  
+**Genre:** Interview / Portrait d'artiste  
+**Contexte:** Discussion sur la création musicale engagée
+
+<div class="badges">
+<span class="badge">#VanuellaWatt</span>
+<span class="badge">#LaMemeCouleurDeCoeur</span>
+<span class="badge">#Interview</span>
+<span class="badge">#RRB</span>
+<span class="badge">#MusiqueEngagée</span>
+<span class="badge">#InvitéeDuMatin</span>
+</div>
+
+<div class="cta-buttons">
+[Watch the Music Video]{.btn target="_blank" rel="noopener" href="https://youtu.be/yBW5KtucHW0"}
+[Stream the Song]{.btn target="_blank" rel="noopener" href="https://bfan.link/la-meme-couleur-de-coeur"}
+[Follow on Instagram]{.btn target="_blank" rel="noopener" href="https://instagram.com/vanuella.watt"}
+</div>
+
+<div class="credits">
+Interview: L'invitée du matin - RRB
+</div>
+</div>
+:::
+
+
+
+
 ::: {.video-card}
 <div class="video-embed">
 <iframe src="https://www.youtube.com/embed/yBW5KtucHW0?rel=0" 
