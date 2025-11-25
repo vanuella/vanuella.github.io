@@ -1,0 +1,22 @@
+# Robots.txt for Vanuella Watt Official Website
+# Updated: November 2025
+
+User-agent: *
+Allow: /
+Allow: /videos/
+Allow: /songs/
+Allow: /events/
+Allow: /media/
+Allow: /gallery/
+Allow: /images/
+
+# Allow crawling of CSS and JavaScript for proper rendering
+Allow: /*.css
+Allow: /*.js
+Allow: /site_libs/
+
+# Sitemap location
+Sitemap: https://www.vanuella.com/sitemap.xml
+
+# Optional: Crawl delay to be gentle on server
+Crawl-delay: 1

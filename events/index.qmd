@@ -25,6 +25,30 @@ Experience Vanuella's musical journey through Oceania
 
 ::: {.grid .events-grid .masonry-layout}
 
+<!-- Telethon 2025 - La Vie en rose -->
+::: {.g-col-12 .g-col-md-6 .g-col-lg-4 .event-card data-category="concert"}
+::: {.event-card-inner}
+![Vanuella Watt performing La Vie en rose at Telethon 2025 in New Caledonia](/gallery/vanu-telethon-2025-lavieenrose.jpg){.event-image}
+
+::: {.event-content}
+::: {.event-badge}
+🎗 Telethon Live Performance
+:::
+
+### La Vie en rose – Telethon 2025 (Nouvelle-Calédonie)
+
+::: {.event-meta}
+📅 08 November 2025 | 📍 Nouvelle-Calédonie
+:::
+
+Un classique intemporel d’Édith Piaf, **La Vie en rose**, réinterprété par Vanuella Watt lors du Telethon 2025 en Nouvelle-Calédonie. Une performance live pleine de douceur, d’élégance et d’émotion, au service d’une cause qui lui tient à cœur.  
+This special Telethon rendition wraps the night in pure French romance — a timeless chanson brought to life with warmth and heart for charity.
+
+:::
+:::
+:::
+
+
 <!-- Oceania Event -->
 ::: {.g-col-12 .g-col-md-6 .g-col-lg-4 .event-card data-category="release"}
 ::: {.event-card-inner}

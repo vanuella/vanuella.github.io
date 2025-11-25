@@ -1,5 +1,7 @@
 project:
   type: website
+  resources:
+    - robots.txt
 
 website:
   title: "Vanuella Watt"
@@ -9,6 +11,7 @@ website:
   twitter-card:
     site: "@VanuellaSing"
   open-graph: true
+  google-analytics: "G-4S42BXLDF1"
   site-url: https://www.vanuella.com/
   repo-url: https://github.com/vanuella/vanuella.github.io
   repo-actions: [edit, issue]
