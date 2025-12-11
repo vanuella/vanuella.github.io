@@ -18,6 +18,378 @@ keywords:
 ---
  
 ```{=html}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanuella Watt - Soul Artist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Hero Section - What's Next */
+        .whats-next-section {
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        .whats-next-title {
+            font-size: 3em;
+            color: #e94560;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 20px rgba(233, 69, 96, 0.5);
+        }
+
+        .cinema-frame {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px;
+            background: linear-gradient(145deg, #2a2a3e, #1a1a2e);
+            border-radius: 20px;
+            box-shadow: 
+                0 0 0 8px #e94560,
+                0 0 0 12px #1a1a2e,
+                0 20px 60px rgba(0, 0, 0, 0.5),
+                inset 0 0 30px rgba(233, 69, 96, 0.1);
+        }
+
+        .cinema-frame::before,
+        .cinema-frame::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #e94560;
+            border-radius: 50%;
+        }
+
+        .cinema-frame::before {
+            top: 15px;
+            left: 15px;
+            box-shadow: 0 0 15px rgba(233, 69, 96, 0.8);
+        }
+
+        .cinema-frame::after {
+            top: 15px;
+            right: 15px;
+            box-shadow: 0 0 15px rgba(233, 69, 96, 0.8);
+        }
+
+        .frame-lights {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            width: 20px;
+            height: 20px;
+            background: #e94560;
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(233, 69, 96, 0.8);
+        }
+
+        .frame-lights::after {
+            content: '';
+            position: absolute;
+            left: calc(100% + 15px);
+            width: 20px;
+            height: 20px;
+            background: #e94560;
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(233, 69, 96, 0.8);
+        }
+
+        .poster-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s ease;
+        }
+
+        .poster-image:hover {
+            transform: scale(1.02);
+        }
+
+        .coming-soon-badge {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: #e94560;
+            color: white;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 5px 20px rgba(233, 69, 96, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 5px 20px rgba(233, 69, 96, 0.4);
+            }
+            50% {
+                box-shadow: 0 5px 30px rgba(233, 69, 96, 0.8);
+            }
+        }
+
+        /* Social Section */
+        .social-section {
+            margin: 60px 0;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .social-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .social-card:hover {
+            transform: translateY(-10px);
+            background: rgba(233, 69, 96, 0.1);
+            border-color: #e94560;
+        }
+
+        .social-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+        }
+
+        .social-card h3 {
+            color: #e94560;
+            margin-bottom: 10px;
+        }
+
+        /* Tracks Section */
+        .tracks-section {
+            margin: 60px 0;
+        }
+
+        .section-title {
+            font-size: 2.5em;
+            color: #e94560;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .tracks-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            margin-bottom: 50px;
+            align-items: start;
+        }
+
+        .track-card img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .track-info h3 {
+            color: #e94560;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .track-info a {
+            color: #e94560;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+
+        .track-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Live Section */
+        .live-section {
+            margin: 60px 0;
+        }
+
+        .live-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .live-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid rgba(233, 69, 96, 0.3);
+        }
+
+        .live-card h3 {
+            color: #e94560;
+            margin-bottom: 15px;
+        }
+
+        .live-card a {
+            color: #e94560;
+            text-decoration: none;
+        }
+
+        /* TikTok Section - Moved before footer */
+        .tiktok-section {
+            margin: 60px 0;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+        }
+
+        .featured-badge {
+            display: inline-block;
+            background: #e94560;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        .content-title {
+            font-size: 2.5em;
+            color: #e94560;
+            margin-bottom: 10px;
+        }
+
+        .creator-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .creator-avatar {
+            width: 60px;
+            height: 60px;
+            background: #e94560;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+
+        .tiktok-container {
+            max-width: 605px;
+            margin: 30px auto;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 30px 0;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: #e94560;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #c73a4f;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #e94560;
+            color: #e94560;
+        }
+
+        .btn-secondary:hover {
+            background: #e94560;
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.3);
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .tracks-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .whats-next-title {
+                font-size: 2em;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- What's Next Section -->
+        <section class="whats-next-section">
+            <h1 class="whats-next-title">What's Next</h1>
+            <div class="cinema-frame">
+                <img src="/gallery/vanu-les-ecuries-de-la-malle-présentent.jpg" 
+                     alt="Vanuella Watt - Les Écuries de la Malle" 
+                     class="poster-image">
+                <div class="frame-lights"></div>
+            </div>
+            <div class="coming-soon-badge">Coming Soon</div>
+        </section>
+
+       
+
+</body>
+
+
+
+
 <!-- Structured Data for Artist (MusicGroup) -->
 <script type="application/ld+json">
 {
@@ -145,68 +517,6 @@ keywords:
 }
 </script>
 
-<div class="featured-content">
-    <div class="content-header">
-        <div class="featured-badge">✨ Latest on TikTok</div>
-        <h1 class="content-title">La même couleur de cœur</h1>
-        <p class="content-subtitle">Spreading love and unity through music - now viral on TikTok</p>
-    </div>
-
-    <div class="creator-info">
-        <div class="creator-avatar">VW</div>
-        <div class="creator-details">
-            <h3>@vanuellawatt</h3>
-            <p>Soul Artist • Message of Peace</p>
-        </div>
-    </div>
-
-    <div class="tiktok-container">
-        <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@vanuellawatt/video/7535973875096538386" data-video-id="7535973875096538386">
-            <section>
-                <a target="_blank" title="@vanuellawatt" href="https://www.tiktok.com/@vanuellawatt?refer=embed">@vanuellawatt</a>
-                <a title="viraltiktok" target="_blank" href="https://www.tiktok.com/tag/viraltiktok?refer=embed">#viraltiktok</a>
-                <a title="viral" target="_blank" href="https://www.tiktok.com/tag/viral?refer=embed">#viral</a>
-                <a title="for" target="_blank" href="https://www.tiktok.com/tag/for?refer=embed">#for</a>
-                <a title="foryoupageofficiall" target="_blank" href="https://www.tiktok.com/tag/foryoupageofficiall?refer=embed">#foryoupageofficiall</a>
-                <a title="foryoupage" target="_blank" href="https://www.tiktok.com/tag/foryoupage?refer=embed">#foryoupage</a>
-                <a title="pourtoii" target="_blank" href="https://www.tiktok.com/tag/pourtoii?refer=embed">#pourtoii</a>
-                <a title="love" target="_blank" href="https://www.tiktok.com/tag/love?refer=embed">#love</a>
-                <a title="peace" target="_blank" href="https://www.tiktok.com/tag/peace?refer=embed">#peace</a>
-                <a title="world" target="_blank" href="https://www.tiktok.com/tag/world?refer=embed">#world</a>
-                <a title="nowar" target="_blank" href="https://www.tiktok.com/tag/nowar?refer=embed">#nowar</a>
-                <a title="singwithme" target="_blank" href="https://www.tiktok.com/tag/singwithme?refer=embed">#singwithme</a>
-                <a title="vibes" target="_blank" href="https://www.tiktok.com/tag/vibes?refer=embed">#vibes</a>
-                <a title="vanuellawatt" target="_blank" href="https://www.tiktok.com/tag/vanuellawatt?refer=embed">#VanuellaWatt</a>
-                <a title="lamemecouleurdecoeur" target="_blank" href="https://www.tiktok.com/tag/lamemecouleurdecoeur?refer=embed">#lamemecouleurdecoeur</a>
-                <a target="_blank" title="♬ son original - Vanuella Watt" href="https://www.tiktok.com/music/son-original-7535973917682043665?refer=embed">♬ son original - Vanuella Watt</a>
-            </section>
-        </blockquote>
-    </div>
-
-    <div class="hashtag-cloud">
-        <a href="https://www.tiktok.com/tag/love" class="hashtag" target="_blank" rel="nofollow">love</a>
-        <a href="https://www.tiktok.com/tag/peace" class="hashtag" target="_blank" rel="nofollow">peace</a>
-        <a href="https://www.tiktok.com/tag/world" class="hashtag" target="_blank" rel="nofollow">world</a>
-        <a href="https://www.tiktok.com/tag/nowar" class="hashtag" target="_blank" rel="nofollow">nowar</a>
-        <a href="https://www.tiktok.com/tag/singwithme" class="hashtag" target="_blank" rel="nofollow">singwithme</a>
-        <a href="https://www.tiktok.com/tag/vibes" class="hashtag" target="_blank" rel="nofollow">vibes</a>
-        <a href="https://bfan.link/la-meme-couleur-de-coeur" class="hashtag" target="_blank" rel="nofollow">stream now</a>
-    </div>
-
-    <div class="action-buttons">
-        <a href="https://www.tiktok.com/@vanuellawatt" class="btn btn-primary" target="_blank" rel="nofollow">
-            Follow on TikTok
-        </a>
-        <a href="https://bfan.link/la-meme-couleur-de-coeur" class="btn btn-secondary" target="_blank" rel="nofollow">
-            Stream the Song
-        </a>
-    </div>
-
-    <div class="music-credit">
-        <span class="music-icon">♬</span>
-        "La même couleur de cœur" - Available on all platforms
-    </div>
-</div>
 
 <script async src="https://www.tiktok.com/embed.js"></script>
 ```
