@@ -370,18 +370,33 @@ keywords:
     </style>
 </head>
 <body>
-    <div class="container">
-        <!-- What's Next Section -->
-        <section class="whats-next-section">
-            <h1 class="whats-next-title">What's Next</h1>
-            <div class="cinema-frame">
-                <img src="/gallery/vanu-les-ecuries-de-la-malle-présentent.jpg" 
-                     alt="Vanuella Watt - Les Écuries de la Malle" 
-                     class="poster-image">
-                <div class="frame-lights"></div>
-            </div>
-            <div class="coming-soon-badge">Coming Soon</div>
-        </section>
+   <div class="container">
+  <!-- What's Next Section -->
+  <section class="whats-next-section">
+    <h1 class="whats-next-title">What's Next</h1>
+
+    <div class="cinema-frame">
+      <img
+        src="/gallery/vanu-les-ecuries-de-la-malle-présentent.jpg"
+        alt="Vanuella Watt - Les Écuries de la Malle"
+        class="poster-image"
+      />
+
+      <!-- Meta text below the image -->
+      <div class="poster-meta">
+        La chanteuse Calédonienne Vanuella Watt à Reims!
+        Le 20 décembre à 17h30, Vanuella interprétera quelques chants de Noël lors d'un évènement organisé par Les écuries de la Malle pour célébrer la magie de Noël.
+        Rejoignez-nous pour ce rendez-vous Reimois exceptionnel!
+        Remerciements à Mr et Mme Ragot et Mr Christopher Bost
+      </div>
+
+      <div class="frame-lights"></div>
+    </div>
+
+    <div class="coming-soon-badge">Coming Soon</div>
+  </section>
+</div>
+
 
        
 
