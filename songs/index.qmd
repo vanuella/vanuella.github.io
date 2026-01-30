@@ -22,11 +22,41 @@ Where Oceanic Roots Meet Contemporary Poetry
 <button class="filter-btn" data-genre="fusion" role="tab" aria-selected="false">Cultural Fusion</button>
 <button class="filter-btn" data-genre="electro" role="tab" aria-selected="false">Electro-Soul</button>
 <button class="filter-btn" data-genre="chanson" role="tab" aria-selected="false">Poetic Chanson</button>
+<button class="filter-btn" data-genre="spiritual" role="tab" aria-selected="false">Spiritual</button>
 :::
 
 ::: {.songs-grid}
 
-::: {.song-card data-genre="fusion" role="article" aria-labelledby="oceania-title"}
+<!-- Angel (FIXED: Quarto-native markup, no raw block HTML) -->
+::: {.song-card data-genre="spiritual" role="article" aria-labelledby="angel-title"}
+::: {.card-inner}
+![](/images/vanu-angel.png){alt="Angel cover art" .card-image loading="lazy"}
+
+::: {.card-content}
+::: {.song-meta}
+[2026]{.release-year}
+[✨ Spiritual Soul Prayer]{.song-badge}
+:::
+
+## Angel {#angel-title .song-title}
+
+::: {.lyrics-preview #angel-lyrics aria-expanded="false"}
+> "Angel, I'm calling your name and I need to feel you now…"  
+> A whispered prayer — raw and repetitive — reaching for the divine when words are no longer enough.
+
+<button class="reveal-lyrics" aria-controls="angel-lyrics" aria-expanded="false">Show More</button>
+:::
+
+::: {.song-actions}
+[Stream Now](#){.cta-button .small .primary aria-label="Stream Angel"}
+[Full Lyrics](angel.html){.cta-button .small .secondary aria-label="View full lyrics for Angel"}
+:::
+:::
+:::
+:::
+
+<!-- La même couleur de cœur (your existing structure kept, only minor id fix recommended) -->
+::: {.song-card data-genre="fusion" role="article" aria-labelledby="lameme-title"}
 ::: {.card-inner}
 <img src="/images/la-meme-couleur-de-coeur.jpg" alt="La même couleur de cœur" class="card-image" loading="lazy">
 
@@ -36,22 +66,23 @@ Where Oceanic Roots Meet Contemporary Poetry
 <span class="song-badge">Urban soul anthem exploring shared humanity in crisis</span>
 </div>
 
-<h2 class="song-title" id="lamemecouleurdecaeur-title">La même couleur de cœur</h2>
+<h2 class="song-title" id="lameme-title">La même couleur de cœur</h2>
 
-<div class="lyrics-preview" id="lamemecouleurdecaeur-lyrics" aria-expanded="false">
+<div class="lyrics-preview" id="lameme-lyrics" aria-expanded="false">
 "Urban soul anthem exploring shared humanity in crisis..."
-<button class="reveal-lyrics" aria-controls="lamemecouleurdecaeur-lyrics" aria-expanded="false">Show More</button>
+<button class="reveal-lyrics" aria-controls="lameme-lyrics" aria-expanded="false">Show More</button>
 </div>
 
 <div class="song-actions">
-<a href="#" class="cta-button small primary" aria-label="Stream Oceania">Stream Now</a>
-<a href="lamemecouleurdecaeur.qmd" class="cta-button small secondary" aria-label="View full lyrics for Oceania">Full Lyrics</a>
+<a href="#" class="cta-button small primary" aria-label="Stream La même couleur de cœur">Stream Now</a>
+<a href="lamemecouleurdecaeur.html" class="cta-button small secondary" aria-label="View full lyrics for La même couleur de cœur">Full Lyrics</a>
 </div>
 </div>
 :::
 :::
 
 
+<!-- Oceania (kept) -->
 ::: {.song-card data-genre="fusion" role="article" aria-labelledby="oceania-title"}
 ::: {.card-inner}
 <img src="/gallery/vanu-oceania.jpg" alt="Oceania Cover Art" class="card-image" loading="lazy">
@@ -71,12 +102,14 @@ Where Oceanic Roots Meet Contemporary Poetry
 
 <div class="song-actions">
 <a href="#" class="cta-button small primary" aria-label="Stream Oceania">Stream Now</a>
-<a href="oceania.qmd" class="cta-button small secondary" aria-label="View full lyrics for Oceania">Full Lyrics</a>
+<a href="oceania.html" class="cta-button small secondary" aria-label="View full lyrics for Oceania">Full Lyrics</a>
 </div>
 </div>
 :::
 :::
 
+
+<!-- Respire (kept, link corrected to .html) -->
 ::: {.song-card data-genre="electro" role="article" aria-labelledby="respire-title"}
 ::: {.card-inner}
 <img src="/gallery/song-respire.jpg" alt="Respire Cover Art" class="card-image" loading="lazy">
@@ -96,13 +129,11 @@ Where Oceanic Roots Meet Contemporary Poetry
 
 <div class="song-actions">
 <a href="#" class="cta-button small primary" aria-label="Stream Respire">Stream Now</a>
-<a href="respire.qmd" class="cta-button small secondary" aria-label="View production notes for Respire">Full Lyrics</a>
+<a href="respire.html" class="cta-button small secondary" aria-label="View production notes for Respire">Full Lyrics</a>
 </div>
 </div>
 :::
 :::
-
-
 
 :::
 
@@ -164,9 +195,7 @@ Where Oceanic Roots Meet Contemporary Poetry
   padding: 2rem;
 }
 
-.song-card {
-  perspective: 1000px;
-}
+.song-card { perspective: 1000px; }
 
 .card-inner {
   background: var(--twitch-dark-light);
@@ -188,16 +217,7 @@ Where Oceanic Roots Meet Contemporary Poetry
   position: relative;
 }
 
-.card-image::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.7) 100%);
-}
-
-.card-content {
-  padding: 1.5rem;
-}
+.card-content { padding: 1.5rem; }
 
 .song-meta {
   display: flex;
@@ -229,9 +249,7 @@ Where Oceanic Roots Meet Contemporary Poetry
   transition: max-height 0.5s ease-in-out;
 }
 
-.lyrics-preview[aria-expanded="true"] {
-  max-height: 500px;
-}
+.lyrics-preview[aria-expanded="true"] { max-height: 500px; }
 
 .reveal-lyrics {
   background: none;
@@ -251,116 +269,22 @@ Where Oceanic Roots Meet Contemporary Poetry
   margin-right: 0.5rem;
 }
 
-.cta-button.primary {
-  background: var(--twitch-purple);
-  color: white;
-}
+.cta-button.primary { background: var(--twitch-purple); color: white; }
 
 .cta-button.secondary {
   background: transparent;
   border: 1px solid var(--twitch-purple);
   color: var(--glow-color);
 }
-
-/* Evolution Timeline */
-.evolution-timeline {
-  padding: 2rem;
-  position: relative;
-}
-
-.timeline-title {
-  font-size: 1.75rem;
-  color: white;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.timeline-item {
-  display: flex;
-  gap: 1.5rem;
-  padding: 1.5rem 0;
-  position: relative;
-}
-
-.timeline-item::before {
-  content: "";
-  position: absolute;
-  left: 90px;
-  top: 0;
-  bottom: 0;
-  width: 2px;
-  background: var(--twitch-purple);
-}
-
-.timeline-year {
-  width: 80px;
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--glow-color);
-  text-align: right;
-}
-
-.timeline-content {
-  flex: 1;
-  background: var(--twitch-dark-light);
-  padding: 1rem;
-  border-radius: 8px;
-  position: relative;
-}
-
-.timeline-content::before {
-  content: "";
-  position: absolute;
-  left: -8px;
-  top: 15px;
-  width: 16px;
-  height: 16px;
-  background: var(--twitch-purple);
-  transform: rotate(45deg);
-}
-
-.track-list a {
-  color: var(--glow-color);
-  text-decoration: none;
-}
-
-.track-list a:hover {
-  text-decoration: underline;
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
-  .songs-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .timeline-item {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .timeline-year {
-    text-align: left;
-    width: auto;
-  }
-
-  .timeline-item::before {
-    left: 10px;
-  }
-
-  .timeline-content::before {
-    left: 2px;
-    top: 50px;
-  }
-}
 </style>
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const filterButtons = document.querySelectorAll('[data-genre]');
+  // FIX: Only select the filter buttons (your old selector grabbed cards too)
+  const filterButtons = document.querySelectorAll('.genre-filter .filter-btn');
   const songCards = document.querySelectorAll('.song-card');
 
-  // Lyrics reveal functionality
+  // Lyrics reveal functionality (kept as-is: expands and removes button)
   document.querySelectorAll('.reveal-lyrics').forEach(button => {
     button.addEventListener('click', (e) => {
       const lyricsDiv = e.target.closest('.lyrics-preview');
@@ -374,7 +298,7 @@ document.addEventListener('DOMContentLoaded', () => {
   filterButtons.forEach(button => {
     button.addEventListener('click', () => {
       const genre = button.dataset.genre;
-      
+
       // Update active state and ARIA attributes
       filterButtons.forEach(btn => {
         btn.classList.remove('active');
@@ -385,9 +309,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Filter song cards
       songCards.forEach(card => {
-        card.style.display = genre === 'all' || card.dataset.genre === genre 
-          ? 'block' 
-          : 'none';
+        card.style.display = (genre === 'all' || card.dataset.genre === genre) ? 'block' : 'none';
       });
     });
 
@@ -400,7 +322,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Lazy-load images observer
+  // Lazy-load images observer (kept)
   const images = document.querySelectorAll('img[loading="lazy"]');
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
