@@ -46,13 +46,16 @@
             max-width: 400px;
             margin: 2rem auto;
             border-radius: 20px;
-            overflow: hidden;
+            overflow: visible;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         }
 
         .song-artwork img {
             width: 100%;
+            height: auto;
             display: block;
+            object-fit: contain;
+            border-radius: 20px;
         }
 
         .song-title {
