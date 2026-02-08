@@ -574,8 +574,11 @@ footer {
 
 .releases-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: var(--space-md);
+    grid-template-columns: repeat(auto-fit, minmax(240px, 280px));
+    gap: var(--space-lg);
+    justify-content: center;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .release-card {
