@@ -1,0 +1,313 @@
+/* =========================================================
+   GLASSMORPHISM DESIGN - From css.glass
+   Vibrant Pink-to-Purple Gradient with Glass Cards
+   ========================================================= */
+
+/* Universal Glass Card Base - Apply to all cards */
+.release-card,
+.video-card,
+.platform-card,
+.event-card,
+.stat-card,
+.media-card,
+.about-content .about-text,
+.navbar,
+.hero-content,
+.footer,
+.newsletter-content,
+.booking-card,
+.info-card {
+    /* Glassmorphism from css.glass */
+    background: rgba(255, 255, 255, 0.18) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: blur(4.5px) !important;
+    -webkit-backdrop-filter: blur(4.5px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    padding: 20px !important;
+}
+
+/* Special Padding for Specific Elements */
+.release-card,
+.video-card,
+.event-card {
+    padding: 0 !important; /* Reset for cards with images */
+}
+
+.release-info,
+.video-info,
+.event-content {
+    padding: 1.5rem !important;
+}
+
+.platform-card {
+    padding: 2rem 1.5rem !important;
+    text-align: center;
+}
+
+.hero-content {
+    padding: 3rem 2rem !important;
+}
+
+.footer {
+    padding: 3rem 2rem !important;
+}
+
+.newsletter-content {
+    padding: 4rem 3rem !important;
+}
+
+.booking-card,
+.info-card {
+    padding: 2.5rem !important;
+}
+
+/* Stay Connected Section - Extra Generous Padding */
+.newsletter h2 {
+    margin-bottom: 2rem !important;
+}
+
+.newsletter p {
+    margin-bottom: 2rem !important;
+    font-size: 1.1rem !important;
+}
+
+.newsletter-form {
+    margin-top: 2.5rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.about-content .about-text {
+    padding: 2.5rem !important;
+}
+
+/* About Heritage Section */
+.about-heritage {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.heritage-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1rem;
+}
+
+.heritage-item svg {
+    color: rgba(236, 72, 153, 0.9);
+    flex-shrink: 0;
+}
+
+.about-bio p {
+    margin-bottom: 1.5rem !important;
+    line-height: 1.8 !important;
+    font-size: 1.05rem !important;
+}
+
+/* Navbar Padding */
+.navbar {
+    padding: 1rem 2rem !important;
+}
+
+.nav-container {
+    padding: 0 !important;
+}
+
+/* Section Containers */
+.section,
+section {
+    padding: 4rem 2rem !important;
+}
+
+.container {
+    padding: 0 2rem !important;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Hover Effects with Subtle Scaling */
+.release-card:hover,
+.video-card:hover,
+.platform-card:hover,
+.event-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2) !important;
+    background: rgba(255, 255, 255, 0.25) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+/* Navbar with Soft Glow */
+.navbar {
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Active Navigation Item with Glow */
+.nav-link.active,
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Buttons with Glass Effect */
+.btn {
+    background: rgba(255, 255, 255, 0.25) !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    backdrop-filter: blur(4.5px) !important;
+    -webkit-backdrop-filter: blur(4.5px) !important;
+    color: white !important;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.35) !important;
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.btn-primary {
+    background: rgba(236, 72, 153, 0.4) !important;
+    border: 1px solid rgba(236, 72, 153, 0.6) !important;
+}
+
+.btn-primary:hover {
+    background: rgba(236, 72, 153, 0.6) !important;
+    box-shadow: 0 8px 30px rgba(236, 72, 153, 0.4) !important;
+}
+
+/* Hero Section Glass Effect */
+.hero-content {
+    background: rgba(255, 255, 255, 0.12) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+}
+
+/* Footer Glass */
+.footer {
+    background: rgba(255, 255, 255, 0.12) !important;
+    backdrop-filter: blur(6px) !important;
+    -webkit-backdrop-filter: blur(6px) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.25) !important;
+}
+
+/* Input Fields Glass */
+input[type="email"],
+input[type="text"],
+textarea {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: 12px !important;
+    backdrop-filter: blur(4.5px) !important;
+    -webkit-backdrop-filter: blur(4.5px) !important;
+    color: white !important;
+    padding: 12px 16px;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+input:focus,
+textarea:focus {
+    background: rgba(255, 255, 255, 0.22) !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Soft Glow for Active Elements */
+.featured,
+.event-card.featured {
+    box-shadow: 0 8px 40px rgba(236, 72, 153, 0.4) !important;
+    border-color: rgba(236, 72, 153, 0.6) !important;
+}
+
+/* Typography - Bold Headers that Stand Out */
+h1, h2, h3, h4, h5, h6,
+.section-title,
+.hero-title,
+.release-title,
+.video-title,
+.event-title,
+.footer-logo h2 {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.4),
+                 0 0 30px rgba(255, 255, 255, 0.3) !important;
+    letter-spacing: 0.02em !important;
+}
+
+/* Section Titles - Extra Prominent */
+.section-title,
+h2 {
+    font-size: clamp(2.5rem, 5vw, 4rem) !important;
+    font-weight: 800 !important;
+    margin-bottom: 1.5rem !important;
+    background: linear-gradient(135deg, #ffffff 0%, rgba(255, 255, 255, 0.8) 100%);
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    text-shadow: none !important;
+    filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.3));
+}
+
+/* Hero Title - Massive Impact */
+.hero-title,
+h1 {
+    font-size: clamp(3.5rem, 8vw, 7rem) !important;
+    font-weight: 900 !important;
+    line-height: 1.1 !important;
+}
+
+/* Card Titles - Bold & Clear */
+h3,
+.release-title,
+.video-title,
+.event-title {
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 0.75rem !important;
+}
+
+p, span, a {
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.text-secondary,
+.section-subtitle,
+.release-artist {
+    color: rgba(255, 255, 255, 0.75) !important;
+    font-weight: 500 !important;
+}
+
+/* Subtle Entry Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.release-card,
+.video-card,
+.platform-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Stagger animation delays */
+.release-card:nth-child(1) { animation-delay: 0.1s; }
+.release-card:nth-child(2) { animation-delay: 0.2s; }
+.release-card:nth-child(3) { animation-delay: 0.3s; }
