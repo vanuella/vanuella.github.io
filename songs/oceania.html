@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oceania - Vanuella Watt &amp; Oceania All Stars</title>
+    <meta name="description" content="Oceania - A pan-Pacific anthem celebrating unity across Melanesia, Polynesia and Micronesia. 1 Ocean, 1 People. Conducted by Igelese Ete.">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/glassmorphism-override.css">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 100%);
+            background-attachment: fixed;
+        }
+
+        .song-hero {
+            padding: 8rem 0 4rem;
+            text-align: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 2rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(-5px);
+        }
+
+        .song-artwork {
+            max-width: 400px;
+            margin: 2rem auto;
+            border-radius: 20px;
+            overflow: visible;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .song-artwork img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+            border-radius: 20px;
+        }
+
+        .song-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .song-artist {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+        }
+
+        .song-meta {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .meta-item {
+            color: white;
+            font-weight: 600;
+        }
+
+        .video-container {
+            max-width: 900px;
+            margin: 3rem auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .streaming-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .stream-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 2rem;
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .stream-btn:hover {
+            background: white;
+            color: #0ea5e9;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .content-section {
+            max-width: 900px;
+            margin: 4rem auto;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.18);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .content-section h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: white;
+            margin: 2rem 0 1rem;
+        }
+
+        .content-section p {
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .content-section ul {
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.8;
+            padding-left: 1.5rem;
+        }
+
+        .content-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .content-section blockquote {
+            border-left: 4px solid rgba(255, 255, 255, 0.4);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 0 10px 10px 0;
+            color: rgba(255, 255, 255, 0.9);
+            font-style: italic;
+        }
+
+        .content-section table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+
+        .content-section th,
+        .content-section td {
+            padding: 0.8rem 1rem;
+            text-align: left;
+            color: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .content-section th {
+            font-weight: 700;
+            background: rgba(0, 0, 0, 0.15);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .info-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .info-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0.5rem;
+        }
+
+        .info-value {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .tab-nav {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 0.6rem 1.5rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn:hover,
+        .tab-btn.active {
+            background: white;
+            color: #0ea5e9;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .song-hero {
+                padding: 6rem 1rem 2rem;
+            }
+
+            .content-section {
+                padding: 2rem 1.5rem;
+                margin: 2rem 1rem;
+            }
+
+            .song-meta {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="song-hero">
+            <a href="../index.html#music" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Back to Music
+            </a>
+
+            <div class="song-artwork">
+                <img src="../gallery/oceania-promo.jpg" alt="Oceania - Vanuella Watt &amp; Oceania All Stars">
+            </div>
+
+            <h1 class="song-title">Oceania</h1>
+            <p class="song-artist">Vanuella Watt &amp; Oceania All Stars</p>
+
+            <div class="song-meta">
+                <span class="meta-item">Released: June 3, 2015</span>
+                <span class="meta-item">Duration: 4:32</span>
+                <span class="meta-item">Genre: Cultural Anthem</span>
+                <span class="meta-item">Conductor: Igelese Ete</span>
+            </div>
+
+            <div class="streaming-buttons">
+                <a href="https://www.youtube.com/watch?v=cHpqMQN3uIw" target="_blank" class="stream-btn">
+                    YouTube
+                </a>
+            </div>
+        </div>
+
+        <div class="video-container">
+            <div class="video-wrapper">
+                <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/cHpqMQN3uIw?si=uD9YkIbr-hIRzeli"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>A Wave of Unity</h2>
+            <p>
+                <strong>"Oceania"</strong> is: <em>1 Ocean, 1 People</em>. Such is the spirit of the song.
+            </p>
+            <p>
+                This pan-Pacific anthem creates a musical tapestry connecting Melanesia, Polynesia, and Micronesia through its multilingual composition. Like the ocean it celebrates, the piece ebbs and flows between traditional rhythms and contemporary arrangements, symbolizing the balance between preserving heritage and embracing modernity.
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h2>Informations</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">Title</div>
+                    <div class="info-value">Oceania</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Artist</div>
+                    <div class="info-value">Oceania All Stars</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Genre</div>
+                    <div class="info-value">Cultural Anthem</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Languages</div>
+                    <div class="info-value">Multiple Pacific Languages</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Duration</div>
+                    <div class="info-value">4:32</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Conductor</div>
+                    <div class="info-value">Igelese Ete</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Cultural Pillars</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Element</th>
+                        <th>Representation</th>
+                        <th>Cultural Significance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Multilingual Lyrics</td>
+                        <td>Sung in various Pacific languages</td>
+                        <td>Preserves linguistic diversity while creating unity</td>
+                    </tr>
+                    <tr>
+                        <td>Collective Performance</td>
+                        <td>Oceania All Stars ensemble</td>
+                        <td>Embodies regional collaboration</td>
+                    </tr>
+                    <tr>
+                        <td>Ocean Imagery</td>
+                        <td>"Wave caressing beaches" metaphor</td>
+                        <td>Represents shared geography and resources</td>
+                    </tr>
+                    <tr>
+                        <td>Traditional Instruments</td>
+                        <td>Log drums &amp; nose flutes</td>
+                        <td>Connects to ancestral musical traditions</td>
+                    </tr>
+                    <tr>
+                        <td>Contemporary Arrangement</td>
+                        <td>Modern choral harmonization</td>
+                        <td>Bridges generations and artistic styles</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="content-section">
+            <h2>Creator's Vision</h2>
+
+            <div class="tab-nav">
+                <button class="tab-btn active" onclick="showTab('french')">French Original</button>
+                <button class="tab-btn" onclick="showTab('english')">English Translation</button>
+            </div>
+
+            <div id="french" class="tab-content active">
+                <p>
+                    <strong>Oceania</strong> c'est : <strong><em>1 Ocean, 1 peuple</em></strong>. Tel est l'esprit de la chanson.
+                </p>
+                <p>
+                    Cet Hymne pour le Pacifique, chante en plusieurs langues et par plusieurs chanteurs de la region Pacifique, represente toutes les facettes de l'Oceanie : la Melanesie, la Polynesie et la Micronesie.
+                </p>
+                <p>
+                    Comme une vague qui viendrait caresser chaque plage des iles du Pacifique, "Oceania" permettra aux enfants de la region d'etre unis par la richesse de leurs cultures et leurs valeurs.
+                </p>
+                <p>
+                    Cet Ocean qui nous separe, nous lie aussi par sa force et ses mysteres. Je souhaite que ce titre soit une source d'inspiration pour les jeunes oceaniens, afin qu'ils puissent trouver leur chemin, entre tradition et modernite, et qu'il soit une source de partage avec le reste du monde.
+                </p>
+                <h3>Remerciements</h3>
+                <p>
+                    Je voudrais remercier Mr Igelese Ete de m'avoir assistee tout au long de la realisation de ce projet, ainsi que le collectif de chanteurs "Oceania all stars". Ils y ont mis un petit bout de leur ame et laisse l'empreinte de leur identite, pour que chacun de nous puisse voyager dans le Pacifique le temps d'une chanson.
+                </p>
+                <p>
+                    Je tiens aussi a remercier tous ceux qui, de pres comme de loin, nous ont aides a mener ce projet jusqu'a terme. Grace a votre aide, "Oceania" inondera le Pacifique.
+                </p>
+                <p>
+                    Enfin, je voudrais remercier le public qui fera voyager "Oceania" jusqu'au 4 coins du monde !
+                </p>
+                <p><em>Musicalement votre,</em> Vanuella Watt</p>
+            </div>
+
+            <div id="english" class="tab-content">
+                <p>
+                    <strong>"Oceania"</strong> is: <em>1 Ocean, 1 people</em>. Such is the spirit of the song.
+                </p>
+                <p>
+                    This Hymn for the Pacific, sung in several languages and by several singers of the Pacific region, represents all the facets of Oceania: Melanesia, Polynesia and Micronesia.
+                </p>
+                <p>
+                    As a wave which would come to caress every Pacific Island beaches, "Oceania" will allow the children of the region to be united by the wealth of their cultures and their values.
+                </p>
+                <p>
+                    This Ocean which separates us, also binds us by its strength and its mysteries. I wish this song could be a source of inspiration for the oceanian young people, so that they could find their way, between tradition and modernity, and a source of sharing with the rest of the world.
+                </p>
+                <h3>Thanks</h3>
+                <p>
+                    I would like to thank Mr Igelese Ete who has assisted me through the realization of this project, as well as the collective of singers "Oceania all stars". They gave a small part of their soul and left the imprint of their identity, so that each of us can travel in the Pacific, the time of a song.
+                </p>
+                <p>
+                    I also want to thank all of those who, closely as by far, helped us to lead this project until term. Thanks to your help, "Oceania" will flood the Pacific.
+                </p>
+                <p>
+                    Finally, I would like to thank the public who will make "Oceania" travel all over of the world.
+                </p>
+                <p><em>Musically yours,</em> Vanuella Watt</p>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2>Cultural Impact</h2>
+            <blockquote>
+                "Hearing my native tongue blended with other Pacific languages gave me chills - this is what unity sounds like!" - @SolomonIslander
+            </blockquote>
+            <blockquote>
+                "The way traditional chants merge with modern harmonies mirrors our youth's journey between worlds." - @TahitianElder
+            </blockquote>
+            <blockquote>
+                "Cette chanson est une vague qui transporte notre identite jusqu'aux confins du monde." - @NouvelleCaledonie
+            </blockquote>
+            <blockquote>
+                "Finally, an anthem that doesn't flatten our diversity but celebrates it through shared melody." - @FijiScholar
+            </blockquote>
+        </div>
+
+        <div class="content-section">
+            <h2>Musical Architecture</h2>
+            <ul>
+                <li><strong>Structure:</strong> Verse-chorus with traditional chant sections</li>
+                <li><strong>Traditional Instruments:</strong> Log drums, conch shells, nose flutes</li>
+                <li><strong>Modern Instruments:</strong> Piano, string sections, synth pads</li>
+                <li><strong>Harmony:</strong> Complex choral arrangements blending polyphonic traditions</li>
+                <li><strong>Rhythm:</strong> Undulating 6/8 time signature mimicking ocean waves</li>
+                <li><strong>Dynamic Range:</strong> Crescendos symbolizing storm surges to pianissimo tidal whispers</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Credits</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="info-label">Music &amp; Lyrics</div>
+                    <div class="info-value">Vanuella Watt</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Musical Direction</div>
+                    <div class="info-value">Igelese Ete</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Vocals</div>
+                    <div class="info-value">Oceania All Stars</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Production</div>
+                    <div class="info-value">Mangrove Productions</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Publishing</div>
+                    <div class="info-value">Studio Mangrove Editions MGV</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Languages</div>
+                    <div class="info-value">15+ Pacific languages</div>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; padding: 4rem 0;">
+            <a href="../index.html#music" class="btn btn-primary">
+                &larr; Back to All Releases
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
