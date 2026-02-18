@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ANGEL - Vanuella Watt | Pre-Save Now</title>
+    <title>ANGEL - Vanuella Watt | Out Now</title>
 
     <!-- Open Graph / Social Media -->
     <meta property="og:title" content="ANGEL - Vanuella Watt">
-    <meta property="og:description" content="A sacred invocation for souls seeking the light. Releasing February 18, 2026.">
+    <meta property="og:description" content="A sacred invocation for souls seeking the light. Out now on all platforms.">
     <meta property="og:type" content="music.song">
     <meta property="og:url" content="https://show.co/KEnmoFG">
 
@@ -571,7 +571,7 @@
             <p class="subtitle">A Sacred Invocation</p>
 
             <div class="release-date">
-                Releasing <span>February 18, 2026</span>
+                <span>Out Now</span>
             </div>
 
             <p class="description">
@@ -581,28 +581,33 @@
                 to rise again.
             </p>
 
-            <a href="https://show.co/KEnmoFG" class="presave-button" target="_blank" onclick="trackPreSaveClick()">
-                <span>Pre-Save on Spotify</span>
+            <a href="https://open.spotify.com/album/1Yd0plQkyxrnweFQPnnRSb?si=mQKetnZ5Tv6tYtt1coLOdQ" class="presave-button" target="_blank" onclick="trackStreamClick()">
+                <span>Listen on Spotify</span>
             </a>
+
+            <div class="social" style="margin-top: 30px;">
+                <a href="https://music.apple.com/au/album/angel/1874785862?i=1874785863" target="_blank">APPLE MUSIC</a>
+                <a href="https://www.tiktok.com/@vanuellawatt?is_from_webapp=1&amp;sender_device=pc" target="_blank">TIKTOK</a>
+            </div>
         </div>
     </section>
 
     <!-- Why Pre-Save Section -->
     <section class="why-presave">
         <div class="content">
-            <h3>Be First to Hear ANGEL</h3>
+            <h3>Stream ANGEL Now</h3>
 
             <div class="benefits">
                 <div class="benefit">
                     <div class="benefit-icon">🎵</div>
-                    <h4>Instant Access</h4>
-                    <p>ANGEL appears in your library the moment it releases at midnight on February 18th</p>
+                    <h4>Stream Now</h4>
+                    <p>ANGEL is available now on Spotify, Apple Music, and all major platforms</p>
                 </div>
 
                 <div class="benefit">
                     <div class="benefit-icon">💫</div>
-                    <h4>Support the Vision</h4>
-                    <p>Pre-saves help this sacred music reach souls who need it most</p>
+                    <h4>Share the Light</h4>
+                    <p>Every stream and share helps this sacred music reach souls who need it most</p>
                 </div>
 
                 <div class="benefit">
@@ -686,21 +691,21 @@
     </section>
 
     <script>
-        // Track pre-save button clicks
-        function trackPreSaveClick() {
+        // Track stream button clicks
+        function trackStreamClick() {
             // Add loading state
             const button = document.querySelector('.presave-button');
             button.classList.add('loading');
 
             // Track in localStorage
-            const clicks = parseInt(localStorage.getItem('angel_presave_clicks') || '0');
-            localStorage.setItem('angel_presave_clicks', clicks + 1);
+            const clicks = parseInt(localStorage.getItem('angel_stream_clicks') || '0');
+            localStorage.setItem('angel_stream_clicks', clicks + 1);
 
-            // Analytics (if you add Google Analytics later)
+            // Analytics
             if (typeof gtag !== 'undefined') {
-                gtag('event', 'pre_save_click', {
+                gtag('event', 'stream_click', {
                     'event_category': 'engagement',
-                    'event_label': 'angel_presave',
+                    'event_label': 'angel_stream',
                     'value': 1
                 });
             }

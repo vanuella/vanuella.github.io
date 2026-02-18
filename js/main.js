@@ -74,41 +74,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ======================================
-// 4. COUNTDOWN TO ANGEL RELEASE
-// ======================================
-
-function updateCountdown() {
-    const releaseDate = new Date('2026-02-18T00:00:00');
-    const now = new Date();
-    const diff = releaseDate - now;
-
-    if (diff > 0) {
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const countdownElement = document.getElementById('countdown-days');
-
-        if (countdownElement) {
-            countdownElement.textContent = days;
-        }
-    } else {
-        // Release day has passed - show "OUT NOW"
-        const countdownElement = document.getElementById('countdown-days');
-        const labelElement = countdownElement?.nextElementSibling;
-
-        if (countdownElement) {
-            countdownElement.textContent = 'OUT';
-        }
-        if (labelElement) {
-            labelElement.textContent = 'NOW';
-        }
-    }
-}
-
-// Update countdown immediately and every hour
-updateCountdown();
-setInterval(updateCountdown, 3600000); // Update every hour
-
-// ======================================
-// 5. FADE IN ON SCROLL ANIMATION
+// 4. FADE IN ON SCROLL ANIMATION
 // ======================================
 
 const observerOptions = {
@@ -151,22 +117,22 @@ window.addEventListener('scroll', () => {
 });
 
 // ======================================
-// 7. PRE-SAVE BUTTON TRACKING
+// 7. STREAM BUTTON TRACKING
 // ======================================
 
-const preSaveButtons = document.querySelectorAll('a[href*="presave"], a[href*="angel-presave"]');
+const streamButtons = document.querySelectorAll('a[href*="spotify.com/album/1Yd0plQkyxrnweFQPnnRSb"], a[href*="angel-presave"]');
 
-preSaveButtons.forEach(button => {
+streamButtons.forEach(button => {
     button.addEventListener('click', () => {
         // Track click in localStorage
-        const clicks = parseInt(localStorage.getItem('angel_presave_clicks') || '0');
-        localStorage.setItem('angel_presave_clicks', clicks + 1);
+        const clicks = parseInt(localStorage.getItem('angel_stream_clicks') || '0');
+        localStorage.setItem('angel_stream_clicks', clicks + 1);
 
         // Google Analytics tracking (if available)
         if (typeof gtag !== 'undefined') {
-            gtag('event', 'pre_save_click', {
+            gtag('event', 'stream_click', {
                 'event_category': 'engagement',
-                'event_label': 'angel_presave',
+                'event_label': 'angel_stream',
                 'value': 1
             });
         }
@@ -394,8 +360,8 @@ document.addEventListener('DOMContentLoaded', preloadCriticalAssets);
 
 console.log('%c♪ VANUELLA WATT ♪', 'font-size: 24px; font-weight: bold; background: linear-gradient(135deg, #ff4081, #9c27b0); -webkit-background-clip: text; color: transparent;');
 console.log('%cSoul from the Pacific 🌴', 'font-size: 14px; color: #ff4081;');
-console.log('%cANGEL - Releasing February 18, 2026', 'font-size: 12px; color: #FFD700;');
-console.log('%cPre-save: https://show.co/KEnmoFG', 'font-size: 11px; color: #f3b6d6;');
+console.log('%cANGEL - Out Now', 'font-size: 12px; color: #FFD700;');
+console.log('%cStream: https://open.spotify.com/album/1Yd0plQkyxrnweFQPnnRSb', 'font-size: 11px; color: #f3b6d6;');
 
 // ======================================
 // INITIALIZATION
