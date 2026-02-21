@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Follow the Light | Vanuella Watt</title>
+    <meta name="description" content="Page not found. Follow the light to ANGEL by Vanuella Watt.">
+    <meta name="robots" content="noindex,follow">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4S42BXLDF1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag("js", new Date());
+        gtag("config", "G-4S42BXLDF1");
+    </script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Montserrat", sans-serif;
+            color: #fff;
+            background:
+                linear-gradient(160deg, rgba(3, 1, 10, 0.95) 0%, rgba(20, 6, 35, 0.92) 45%, rgba(80, 22, 90, 0.75) 100%),
+                url("/images/vanu-angel.png") center/cover no-repeat fixed;
+        }
+
+        .overlay {
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 2rem 1rem;
+            background: radial-gradient(circle at 50% 35%, rgba(255, 215, 0, 0.22), transparent 58%);
+        }
+
+        .card {
+            width: min(820px, 96%);
+            background: rgba(11, 3, 22, 0.74);
+            border: 1px solid rgba(255, 215, 0, 0.35);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            text-align: center;
+            padding: 2.2rem 1.3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+        }
+
+        .status {
+            margin: 0 0 0.9rem;
+            font-size: 0.9rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: #ffd76f;
+        }
+
+        h1 {
+            font-family: "Cormorant Garamond", serif;
+            margin: 0;
+            font-size: clamp(2rem, 6vw, 3.3rem);
+            line-height: 1.15;
+            color: #fff7dc;
+        }
+
+        .message {
+            margin: 1rem auto 0;
+            max-width: 650px;
+            font-size: clamp(1rem, 2.7vw, 1.2rem);
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .angel {
+            color: #ffd700;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+        }
+
+        .actions {
+            margin-top: 1.7rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 180px;
+            padding: 0.8rem 1.1rem;
+            text-decoration: none;
+            border-radius: 999px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(90deg, #ffd700 0%, #f6b73c 100%);
+            color: #2f1600;
+            box-shadow: 0 10px 24px rgba(255, 215, 0, 0.3);
+        }
+
+        .btn-secondary {
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 14px 28px rgba(255, 215, 0, 0.4);
+        }
+
+        .path {
+            margin: 1rem auto 0;
+            max-width: 680px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            word-break: break-word;
+        }
+
+        code {
+            color: #ffe6a3;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        }
+
+        @media (max-width: 520px) {
+            .card {
+                padding: 1.7rem 1rem;
+            }
+
+            .btn {
+                width: 100%;
+                min-width: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="overlay">
+        <section class="card" aria-labelledby="missing-page-title">
+            <p class="status">404 Not Found</p>
+            <h1 id="missing-page-title">You have not found what you were looking for.</h1>
+            <p class="message">Let <span class="angel">ANGEL</span> guide you back to the light.</p>
+
+            <div class="actions">
+                <a class="btn btn-primary" href="/angel-presave-landing.html">Listen to ANGEL</a>
+                <a class="btn btn-secondary" href="/">Back Home</a>
+                <a class="btn btn-secondary" href="/#music">Explore Songs</a>
+            </div>
+
+            <p class="path">Requested URL: <code id="missing-url"></code></p>
+        </section>
+    </main>
+
+    <script>
+        (function () {
+            var missing = window.location.pathname + window.location.search + window.location.hash;
+            document.getElementById("missing-url").textContent = missing || "/";
+
+            if (typeof gtag === "function") {
+                gtag("event", "page_not_found", {
+                    missing_path: window.location.pathname,
+                    page_location: window.location.href,
+                    page_referrer: document.referrer || "(direct)"
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
