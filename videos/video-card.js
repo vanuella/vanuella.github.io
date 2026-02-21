@@ -12,7 +12,7 @@
     "instagram": "https://instagram.com/vanuella.watt",
     "facebook": "https://www.facebook.com/vanuellawatt",
     "publisher": "Vanuella Watt",
-    "uploadDate": "2025-08-01"
+    "uploadDate": "2025-08-01T00:00:00+00:00"
   },
   {
     "id": "respire-official",
@@ -26,7 +26,7 @@
     "instagram": "https://instagram.com/vanuella.watt",
     "facebook": "https://www.facebook.com/vanuellawatt",
     "publisher": "Vanuella Watt",
-    "uploadDate": "2025-08-15"
+    "uploadDate": "2025-08-15T00:00:00+00:00"
   }
 ]
 
@@ -97,6 +97,7 @@ function buildVideoCard(v){
 
 function appendJsonLd(v){
     if(!v || !v.title || !v.embedUrl) return;
+    const normalizedUploadDate = normalizeUploadDate(v.uploadDate);
     const obj = {
       "@context": "https://schema.org",
       "@type": "VideoObject",
@@ -106,12 +107,28 @@ function appendJsonLd(v){
       embedUrl: v.embedUrl,
       url: v.watchUrl || v.embedUrl,
       publisher: v.publisher ? {"@type":"Organization","name": v.publisher} : undefined,
-      uploadDate: v.uploadDate || undefined
+      uploadDate: normalizedUploadDate
     };
     const script = document.createElement('script');
     script.type = 'application/ld+json';
     script.textContent = JSON.stringify(obj, null, 2);
     document.body.appendChild(script);
+}
+
+function normalizeUploadDate(value){
+    if(!value || typeof value !== 'string') return undefined;
+
+    // Accept full datetime with timezone as-is.
+    if(/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/.test(value)){
+      return value;
+    }
+
+    // Normalize date-only values to midnight UTC for rich result compatibility.
+    if(/^\d{4}-\d{2}-\d{2}$/.test(value)){
+      return value + 'T00:00:00+00:00';
+    }
+
+    return undefined;
 }
 
 // helpers
