@@ -3,7 +3,7 @@
   {
     "id": "lamemecouleurdecoeur-official",
     "platform": "youtube",
-    "embedUrl": "https://www.youtube.com/embed/cFqMX5_plfQ?rel=0",
+    "embedUrl": "https://www.youtube.com/embed/cFqMX5_plfQ?enablejsapi=1&origin=https://www.vanuella.com&rel=0",
     "watchUrl": "https://youtu.be/cFqMX5_plfQ",
     "title": "La même couleur de cœur – Official Clip",
     "description": "Ballade cinématographique engagée par Vanuella Watt; cri de compassion et d’unité. Sortie digitale: 1 août 2025.",
@@ -17,7 +17,7 @@
   {
     "id": "respire-official",
     "platform": "youtube",
-    "embedUrl": "https://www.youtube.com/embed/egYImqLiopw?si=kddPZl5UWOkWXaGd",
+    "embedUrl": "https://www.youtube.com/embed/egYImqLiopw?enablejsapi=1&origin=https://www.vanuella.com&rel=0",
     "watchUrl": "https://youtu.be/egYImqLiopw",
     "title": "Respire – Official",
     "description": "Hymne de résilience: 'Résiste, respire…'. Composition: Vanuella · Paroles: Stéphanie Watt · Arrangements: Philippe Léger.",
