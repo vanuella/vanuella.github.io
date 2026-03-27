@@ -29,24 +29,40 @@ navLinks.forEach(link => {
 });
 
 // ======================================
-// 2. NAVBAR SCROLL EFFECT
+// 2. NAVBAR SCROLL EFFECT + PARALLAX (merged, RAF-throttled)
 // ======================================
 
 const navbar = document.querySelector('.navbar');
-let lastScroll = 0;
+let rafPending = false;
 
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
+function onScroll() {
+    if (rafPending) return;
+    rafPending = true;
+    requestAnimationFrame(() => {
+        rafPending = false;
+        const scrolled = window.pageYOffset;
 
-    // Add shadow on scroll
-    if (currentScroll > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
+        // Navbar shadow
+        if (scrolled > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
 
-    lastScroll = currentScroll;
-});
+        // Parallax
+        const hero = document.querySelector('.hero-content');
+        const heroGlow = document.querySelector('.hero-glow');
+        if (hero && scrolled < window.innerHeight) {
+            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            hero.style.opacity = 1 - (scrolled / window.innerHeight) * 0.8;
+        }
+        if (heroGlow && scrolled < window.innerHeight) {
+            heroGlow.style.transform = `translate(-50%, -50%) scale(${1 + scrolled * 0.001})`;
+        }
+    });
+}
+
+window.addEventListener('scroll', onScroll, { passive: true });
 
 // ======================================
 // 3. SMOOTH SCROLL FOR ANCHOR LINKS
@@ -97,24 +113,7 @@ fadeElements.forEach(el => {
     observer.observe(el);
 });
 
-// ======================================
-// 6. PARALLAX EFFECT FOR HERO
-// ======================================
-
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero-content');
-    const heroGlow = document.querySelector('.hero-glow');
-
-    if (hero && scrolled < window.innerHeight) {
-        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-        hero.style.opacity = 1 - (scrolled / window.innerHeight) * 0.8;
-    }
-
-    if (heroGlow && scrolled < window.innerHeight) {
-        heroGlow.style.transform = `translate(-50%, -50%) scale(${1 + scrolled * 0.001})`;
-    }
-});
+// Parallax merged into section 2 above
 
 // ======================================
 // 7. STREAM BUTTON TRACKING
@@ -302,57 +301,6 @@ document.querySelectorAll('a[target="_blank"]').forEach(link => {
     });
 });
 
-// ======================================
-// 13. SCROLL PROGRESS INDICATOR (optional)
-// ======================================
-
-function updateScrollProgress() {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const scrollPercent = (scrollTop / scrollHeight) * 100;
-
-    // Store scroll percentage (can be used for UI element)
-    document.documentElement.style.setProperty('--scroll-progress', scrollPercent);
-}
-
-window.addEventListener('scroll', updateScrollProgress);
-
-// ======================================
-// 14. DISABLE RIGHT-CLICK ON IMAGES (optional - artist protection)
-// ======================================
-
-// Uncomment if you want to protect images
-/*
-document.querySelectorAll('.release-artwork img, .about-image img').forEach(img => {
-    img.addEventListener('contextmenu', (e) => {
-        e.preventDefault();
-        return false;
-    });
-});
-*/
-
-// ======================================
-// 15. PRELOAD CRITICAL ASSETS
-// ======================================
-
-function preloadCriticalAssets() {
-    const criticalImages = [
-        // Add paths to critical images that should load immediately
-        // 'images/angel-artwork.jpg',
-        // 'images/vanuella-portrait.jpg'
-    ];
-
-    criticalImages.forEach(src => {
-        const link = document.createElement('link');
-        link.rel = 'preload';
-        link.as = 'image';
-        link.href = src;
-        document.head.appendChild(link);
-    });
-}
-
-// Run on page load
-document.addEventListener('DOMContentLoaded', preloadCriticalAssets);
 
 // ======================================
 // 16. CONSOLE MESSAGE (easter egg)

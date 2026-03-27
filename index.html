@@ -33,10 +33,14 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/favicon.png">
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts — non-blocking -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    <!-- Preload hero background -->
+    <link rel="preload" as="image" href="images/angelishere.jpg">
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="css/main.css">
@@ -220,7 +224,7 @@
                 <article class="release-card featured">
                     <div class="release-badge">New Release</div>
                     <a href="songs/angel.html" class="release-artwork" title="ANGEL - Out Now">
-                        <img src="images/vanu-angel.png" alt="ANGEL - Vanuella Watt" loading="lazy">
+                        <img src="images/vanu-angel.png" alt="ANGEL - Vanuella Watt" loading="lazy" width="400" height="400">
                         <div class="release-overlay">
                             <div class="play-btn">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -248,7 +252,7 @@
                 <!-- La même couleur de cœur -->
                 <article class="release-card">
                     <a href="songs/lamemecouleurdecaeur.html" class="release-artwork" title="La même couleur de cœur">
-                        <img src="images/la-meme-couleur-de-coeur.jpg" alt="La même couleur de cœur - Vanuella Watt" loading="lazy">
+                        <img src="images/la-meme-couleur-de-coeur.jpg" alt="La même couleur de cœur - Vanuella Watt" loading="lazy" width="400" height="400">
                         <div class="release-overlay">
                             <div class="play-btn">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -276,7 +280,7 @@
                 <!-- Respire -->
                 <article class="release-card">
                     <a href="songs/respire.html" class="release-artwork" title="Respire">
-                        <img src="images/respire.png" alt="Respire - Vanuella Watt" loading="lazy">
+                        <img src="images/respire.jpg" alt="Respire - Vanuella Watt" loading="lazy" width="400" height="400">
                         <div class="release-overlay">
                             <div class="play-btn">
                                 <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
@@ -309,7 +313,7 @@
             <div class="catalogue-grid">
 
                 <a href="songs/oceania.html" class="catalogue-card">
-                    <img src="gallery/oceania-promo.jpg" alt="Oceania - Vanuella Watt" loading="lazy">
+                    <img src="gallery/oceania-promo.jpg" alt="Oceania - Vanuella Watt" loading="lazy" width="480" height="270">
                     <div class="catalogue-info">
                         <h4>Oceania</h4>
                         <span class="catalogue-meta">2015 &bull; Pacific Anthem &bull; 4:32</span>
@@ -318,7 +322,7 @@
                 </a>
 
                 <a href="songs/soleil.html" class="catalogue-card">
-                    <img src="https://i.ytimg.com/vi/ukdu8YsliXE/hqdefault.jpg" alt="Soleil - Vanuella Watt" loading="lazy">
+                    <img src="https://i.ytimg.com/vi/ukdu8YsliXE/hqdefault.jpg" alt="Soleil - Vanuella Watt" loading="lazy" width="480" height="360">
                     <div class="catalogue-info">
                         <h4>Soleil</h4>
                         <span class="catalogue-meta">2012 &bull; Noumea &amp; Isle of Pines</span>
@@ -327,7 +331,7 @@
                 </a>
 
                 <a href="songs/coeur-grenadine.html" class="catalogue-card">
-                    <img src="https://i.ytimg.com/vi/5-kyQWPti10/hqdefault.jpg" alt="Coeur Grenadine - Vanuella Watt" loading="lazy">
+                    <img src="https://i.ytimg.com/vi/5-kyQWPti10/hqdefault.jpg" alt="Coeur Grenadine - Vanuella Watt" loading="lazy" width="480" height="360">
                     <div class="catalogue-info">
                         <h4>Coeur Grenadine (Island Mix)</h4>
                         <span class="catalogue-meta">2011 &bull; feat. Burnin' Faya</span>
@@ -336,7 +340,7 @@
                 </a>
 
                 <a href="songs/real-princess.html" class="catalogue-card">
-                    <img src="https://i.ytimg.com/vi/HxlEV_H4AyY/hqdefault.jpg" alt="Real Princess - Mada Voice &amp; Vanuella Watt" loading="lazy">
+                    <img src="https://i.ytimg.com/vi/HxlEV_H4AyY/hqdefault.jpg" alt="Real Princess - Mada Voice &amp; Vanuella Watt" loading="lazy" width="480" height="360">
                     <div class="catalogue-info">
                         <h4>Real Princess</h4>
                         <span class="catalogue-meta">Mada Voice &amp; Vanuella Watt</span>
@@ -345,7 +349,7 @@
                 </a>
 
                 <a href="songs/revoir-mes-iles.html" class="catalogue-card">
-                    <img src="https://i.ytimg.com/vi/xkDGtT4Xnho/hqdefault.jpg" alt="Revoir mes iles - Vanuella Watt" loading="lazy">
+                    <img src="https://i.ytimg.com/vi/xkDGtT4Xnho/hqdefault.jpg" alt="Revoir mes iles - Vanuella Watt" loading="lazy" width="480" height="360">
                     <div class="catalogue-info">
                         <h4>Revoir mes iles</h4>
                         <span class="catalogue-meta">2026 &bull; Album: Revoir mes iles</span>
@@ -354,7 +358,7 @@
                 </a>
 
                 <a href="songs/tissee-metissee.html" class="catalogue-card">
-                    <img src="https://i.ytimg.com/vi/Z9ZWeSJC8-A/hqdefault.jpg" alt="Tissee metissee - Vanuella Watt" loading="lazy">
+                    <img src="https://i.ytimg.com/vi/Z9ZWeSJC8-A/hqdefault.jpg" alt="Tissee metissee - Vanuella Watt" loading="lazy" width="480" height="360">
                     <div class="catalogue-info">
                         <h4>Tissee metissee</h4>
                         <span class="catalogue-meta">2026 &bull; Album: Revoir mes iles</span>
