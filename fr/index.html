@@ -46,13 +46,18 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/glassmorphism-override.css">
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4S42BXLDF1"></script>
+    <!-- Google Analytics — deferred after load -->
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-4S42BXLDF1');
+        window.addEventListener('load', function() {
+            var s = document.createElement('script');
+            s.async = true;
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=G-4S42BXLDF1';
+            document.head.appendChild(s);
+        });
     </script>
 
     <!-- Structured Data - Artist -->
@@ -409,7 +414,7 @@
 
                 <div class="about-image">
                     <div class="image-wrapper">
-                        <img src="/images/vanu-angel.png" alt="Vanuella Watt" loading="lazy">
+                        <img src="/images/vanu-angel.png" alt="Vanuella Watt" loading="lazy" width="567" height="679">
                     </div>
                 </div>
             </div>
@@ -505,16 +510,12 @@
 
 
                     <div class="video-wrapper">
-                        <iframe
-                            width="560"
-                            height="315"
-                            src="https://www.youtube.com/embed/yBW5KtucHW0?enablejsapi=1&origin=https://www.vanuella.com&rel=0"
-                            title="La même couleur de cœur - Clip officiel par Vanuella Watt"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin"
-                            allowfullscreen>
-                        </iframe>
+                        <div class="yt-facade" data-vid="yBW5KtucHW0" data-title="La même couleur de cœur - Clip officiel par Vanuella Watt" role="button" tabindex="0" aria-label="Play La même couleur de cœur - Clip officiel par Vanuella Watt">
+                        <img src="https://i.ytimg.com/vi/yBW5KtucHW0/hqdefault.jpg" alt="La même couleur de cœur - Clip officiel par Vanuella Watt" loading="lazy" width="480" height="360">
+                        <button class="yt-play-btn" aria-label="Play La même couleur de cœur - Clip officiel par Vanuella Watt" tabindex="-1">
+                            <svg viewBox="0 0 68 48" width="68" height="48" aria-hidden="true"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#f00"/><path d="M45 24 27 14v20z" fill="#fff"/></svg>
+                        </button>
+                    </div>
                     </div>
                     <div class="video-info">
                         <h3>La même couleur de cœur - Clip officiel</h3>
@@ -536,16 +537,12 @@
 
 
                     <div class="video-wrapper">
-                        <iframe
-                            width="560"
-                            height="315"
-                            src="https://www.youtube.com/embed/egYImqLiopw?enablejsapi=1&origin=https://www.vanuella.com&rel=0"
-                            title="Respire - Vanuella Watt"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin"
-                            allowfullscreen>
-                        </iframe>
+                        <div class="yt-facade" data-vid="egYImqLiopw" data-title="Respire - Vanuella Watt" role="button" tabindex="0" aria-label="Play Respire - Vanuella Watt">
+                        <img src="https://i.ytimg.com/vi/egYImqLiopw/hqdefault.jpg" alt="Respire - Vanuella Watt" loading="lazy" width="480" height="360">
+                        <button class="yt-play-btn" aria-label="Play Respire - Vanuella Watt" tabindex="-1">
+                            <svg viewBox="0 0 68 48" width="68" height="48" aria-hidden="true"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#f00"/><path d="M45 24 27 14v20z" fill="#fff"/></svg>
+                        </button>
+                    </div>
                     </div>
                     <div class="video-info">
                         <h3>Respire - Une symphonie de survie</h3>
@@ -567,16 +564,12 @@
 
 
                     <div class="video-wrapper">
-                        <iframe
-                            width="560"
-                            height="315"
-                            src="https://www.youtube.com/embed/cFqMX5_plfQ?enablejsapi=1&origin=https://www.vanuella.com&rel=0"
-                            title="La même couleur de cœur - Performance live à Paris"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin"
-                            allowfullscreen>
-                        </iframe>
+                        <div class="yt-facade" data-vid="cFqMX5_plfQ" data-title="La même couleur de cœur - Performance live à Paris" role="button" tabindex="0" aria-label="Play La même couleur de cœur - Performance live à Paris">
+                        <img src="https://i.ytimg.com/vi/cFqMX5_plfQ/hqdefault.jpg" alt="La même couleur de cœur - Performance live à Paris" loading="lazy" width="480" height="360">
+                        <button class="yt-play-btn" aria-label="Play La même couleur de cœur - Performance live à Paris" tabindex="-1">
+                            <svg viewBox="0 0 68 48" width="68" height="48" aria-hidden="true"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#f00"/><path d="M45 24 27 14v20z" fill="#fff"/></svg>
+                        </button>
+                    </div>
                     </div>
                     <div class="video-info">
                         <h3>La même couleur de cœur - Performance live à Paris</h3>
@@ -598,16 +591,12 @@
 
 
                     <div class="video-wrapper">
-                        <iframe
-                            width="560"
-                            height="315"
-                            src="https://www.youtube.com/embed/XY7NiPq9Cyg?enablejsapi=1&origin=https://www.vanuella.com&rel=0"
-                            title="Vanuella Watt Interview - L'invitée du matin RRB"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin"
-                            allowfullscreen>
-                        </iframe>
+                        <div class="yt-facade" data-vid="XY7NiPq9Cyg" data-title="Vanuella Watt Interview - L'invitée du matin RRB" role="button" tabindex="0" aria-label="Play Vanuella Watt Interview - L'invitée du matin RRB">
+                        <img src="https://i.ytimg.com/vi/XY7NiPq9Cyg/hqdefault.jpg" alt="Vanuella Watt Interview - L'invitée du matin RRB" loading="lazy" width="480" height="360">
+                        <button class="yt-play-btn" aria-label="Play Vanuella Watt Interview - L'invitée du matin RRB" tabindex="-1">
+                            <svg viewBox="0 0 68 48" width="68" height="48" aria-hidden="true"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#f00"/><path d="M45 24 27 14v20z" fill="#fff"/></svg>
+                        </button>
+                    </div>
                     </div>
                     <div class="video-info">
                         <h3>La même couleur de cœur - Interview RRB L'invitée du matin</h3>

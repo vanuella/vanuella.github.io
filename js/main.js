@@ -315,6 +315,31 @@ console.log('%cStream: https://open.spotify.com/album/1Yd0plQkyxrnweFQPnnRSb', '
 // INITIALIZATION
 // ======================================
 
+// ======================================
+// YOUTUBE FACADE — load iframe on click
+// ======================================
+
+document.querySelectorAll('.yt-facade').forEach(function(facade) {
+    function activate() {
+        var vid = facade.dataset.vid;
+        var title = facade.dataset.title || 'Video';
+        var iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube.com/embed/' + vid + '?autoplay=1&rel=0';
+        iframe.title = title;
+        iframe.setAttribute('allowfullscreen', '');
+        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+        iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+        iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0';
+        facade.replaceWith(iframe);
+    }
+    facade.addEventListener('click', activate, { once: true });
+    facade.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(); }
+    }, { once: true });
+});
+
+// ======================================
+
 console.log('✓ Vanuella.com initialized');
 console.log('✓ Countdown active');
 console.log('✓ Analytics tracking ready');

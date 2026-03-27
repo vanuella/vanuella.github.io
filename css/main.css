@@ -2556,3 +2556,50 @@ footer {
         font-size: 1.5rem;
     }
 }
+
+/* -----------------------------------------------
+   YOUTUBE FACADE — click-to-load video player
+   ----------------------------------------------- */
+
+.yt-facade {
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+    background: #000;
+    overflow: hidden;
+}
+
+.yt-facade img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.2s ease;
+}
+
+.yt-facade:hover img,
+.yt-facade:focus-within img {
+    opacity: 0.75;
+}
+
+.yt-play-btn {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.yt-play-btn svg {
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+    transition: transform 0.15s ease;
+}
+
+.yt-facade:hover .yt-play-btn svg,
+.yt-facade:focus-within .yt-play-btn svg {
+    transform: scale(1.12);
+}
