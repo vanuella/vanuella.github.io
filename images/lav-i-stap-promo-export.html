@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Lav I Stap Ol Taem — Promo Export</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #111; display: flex; flex-direction: column; align-items: center; padding: 20px; gap: 12px; }
+  #canvas { display: block; }
+  button {
+    padding: 10px 24px; background: #9b59b6; color: white;
+    border: none; border-radius: 6px; font-size: 16px; cursor: pointer;
+  }
+  button:hover { background: #7d3c98; }
+  p { color: #aaa; font-family: Arial; font-size: 13px; }
+</style>
+</head>
+<body>
+<canvas id="canvas" width="1080" height="1080"></canvas>
+<button onclick="download()">Download PNG (1080×1080)</button>
+<p>Right-click the image above and "Save image as" — or click the button.</p>
+
+<script>
+const c = document.getElementById('canvas');
+const ctx = c.getContext('2d');
+const W = 1080, H = 1080;
+const CX = 540, CY = 490, R = 315;
+
+// ── BACKGROUND ──
+const bg = ctx.createRadialGradient(CX, 480, 0, CX, 480, 780);
+bg.addColorStop(0,    '#0e0828');
+bg.addColorStop(0.35, '#080520');
+bg.addColorStop(0.70, '#04030f');
+bg.addColorStop(1,    '#010108');
+ctx.fillStyle = bg;
+ctx.fillRect(0, 0, W, H);
+
+// Nebula clouds
+function nebula(x, y, rx, ry, color, alpha) {
+  const g = ctx.createRadialGradient(x, y, 0, x, y, Math.max(rx, ry));
+  g.addColorStop(0, color.replace('%%', String(alpha)));
+  g.addColorStop(1, color.replace('%%', '0'));
+  ctx.save();
+  ctx.scale(rx / ry, 1);
+  const g2 = ctx.createRadialGradient(x * ry/rx, y, 0, x * ry/rx, y, ry);
+  g2.addColorStop(0, `rgba(74,26,144,${alpha})`);
+  g2.addColorStop(1, `rgba(74,26,144,0)`);
+  ctx.fillStyle = g2;
+  ctx.beginPath();
+  ctx.arc(x * ry/rx, y, ry, 0, Math.PI * 2);
+  ctx.fill();
+  ctx.restore();
+}
+
+// Purple nebula
+let gn = ctx.createRadialGradient(230, 280, 0, 230, 280, 340);
+gn.addColorStop(0, 'rgba(74,26,144,0.35)');
+gn.addColorStop(1, 'rgba(74,26,144,0)');
+ctx.fillStyle = gn; ctx.fillRect(0,0,W,H);
+
+gn = ctx.createRadialGradient(870, 750, 0, 870, 750, 280);
+gn.addColorStop(0, 'rgba(26,58,144,0.28)');
+gn.addColorStop(1, 'rgba(26,58,144,0)');
+ctx.fillStyle = gn; ctx.fillRect(0,0,W,H);
+
+gn = ctx.createRadialGradient(600, 200, 0, 600, 200, 220);
+gn.addColorStop(0, 'rgba(112,96,192,0.20)');
+gn.addColorStop(1, 'rgba(112,96,192,0)');
+ctx.fillStyle = gn; ctx.fillRect(0,0,W,H);
+
+gn = ctx.createRadialGradient(CX, CY, 0, CX, CY, 500);
+gn.addColorStop(0, 'rgba(60,30,110,0.15)');
+gn.addColorStop(1, 'rgba(60,30,110,0)');
+ctx.fillStyle = gn; ctx.fillRect(0,0,W,H);
+
+// ── STARS ──
+const stars = [
+  [78,62,1.8,.95],[142,198,1.4,.80],[210,45,2.2,.90],[312,130,1.2,.70],
+  [420,78,1.6,.85],[530,38,1.9,.92],[650,90,1.3,.75],[760,55,2.0,.88],
+  [880,140,1.5,.80],[995,70,1.7,.85],[48,310,1.4,.72],[100,480,1.8,.82],
+  [55,640,1.3,.68],[90,800,2.0,.88],[40,950,1.5,.75],[980,250,1.6,.80],
+  [1040,420,1.9,.90],[995,600,1.4,.72],[1020,760,2.1,.88],[970,920,1.6,.78],
+  [200,970,1.8,.82],[380,1020,1.4,.70],[600,1040,1.9,.85],[800,990,1.5,.75],
+  [940,1050,1.7,.80],[160,150,1.0,.75],[290,220,.9,.75],[370,60,1.1,.75],
+  [470,160,.8,.75],[580,110,1.0,.75],[700,170,.9,.75],[820,95,1.1,.75],
+  [930,190,.8,.75],[130,390,1.0,.75],[170,540,.9,.75],[120,700,1.1,.75],
+  [155,870,.8,.75],[940,340,1.0,.75],[960,500,.9,.75],[930,680,1.1,.75],
+  [945,840,.8,.75],[310,990,1.0,.75],[490,1010,.9,.75],[700,1025,1.1,.75],
+  [860,1000,.8,.75],[250,340,.9,.55],[340,410,.8,.55],[180,460,1.0,.55],
+  [280,550,.7,.55],[150,620,.9,.55],[240,720,.8,.55],[810,310,.9,.55],
+  [900,420,.8,.55],[860,560,1.0,.55],[920,640,.7,.55],[840,750,.9,.55],
+  [880,870,.8,.55],[330,170,.6,.45],[440,220,.5,.45],[555,185,.6,.45],
+  [680,140,.5,.45],[740,250,.6,.45],[850,200,.5,.45],[110,270,.6,.45],
+  [190,720,.5,.45],[960,480,.6,.45],[1000,550,.5,.45],[420,950,.6,.45],
+  [660,975,.5,.45]
+];
+stars.forEach(([x,y,r,a]) => {
+  ctx.beginPath();
+  ctx.arc(x, y, r, 0, Math.PI*2);
+  ctx.fillStyle = `rgba(220,228,255,${a})`;
+  ctx.fill();
+});
+
+// ── RING ──
+// Outer diffuse glow
+ctx.save();
+ctx.shadowColor = 'rgba(120,140,230,0.5)';
+ctx.shadowBlur = 80;
+ctx.beginPath(); ctx.arc(CX,CY,R,0,Math.PI*2);
+ctx.strokeStyle = 'rgba(100,120,210,0.15)';
+ctx.lineWidth = 100; ctx.stroke();
+ctx.restore();
+
+// Mid glow
+ctx.save();
+ctx.shadowColor = 'rgba(160,180,250,0.6)';
+ctx.shadowBlur = 40;
+ctx.beginPath(); ctx.arc(CX,CY,R,0,Math.PI*2);
+ctx.strokeStyle = 'rgba(150,170,240,0.30)';
+ctx.lineWidth = 40; ctx.stroke();
+ctx.restore();
+
+// Inner halo
+ctx.beginPath(); ctx.arc(CX,CY,R,0,Math.PI*2);
+ctx.strokeStyle = 'rgba(190,205,255,0.38)';
+ctx.lineWidth = 18; ctx.stroke();
+
+// Core ring — gradient
+const ringGrad = ctx.createLinearGradient(CX-R,CY-R,CX+R,CY+R);
+ringGrad.addColorStop(0,   '#a0b8e0');
+ringGrad.addColorStop(0.2, '#d8e4ff');
+ringGrad.addColorStop(0.4, '#8090c8');
+ringGrad.addColorStop(0.6, '#c8d0f8');
+ringGrad.addColorStop(0.8, '#9878d0');
+ringGrad.addColorStop(1,   '#a0b8e0');
+ctx.beginPath(); ctx.arc(CX,CY,R,0,Math.PI*2);
+ctx.strokeStyle = ringGrad;
+ctx.lineWidth = 4; ctx.stroke();
+
+// Hot inner edge
+ctx.beginPath(); ctx.arc(CX,CY,R-2,0,Math.PI*2);
+ctx.strokeStyle = 'rgba(240,245,255,0.55)';
+ctx.lineWidth = 1.5; ctx.stroke();
+
+// Sparkle dots on ring
+const sparkles = [
+  [313,283,3.5],[410,196,2.5],[490,178,4.0],[575,177,2.8],[660,196,3.2],
+  [750,240,2.4],[770,280,3.8],[840,370,2.6],[854,460,3.4],[847,550,2.2],
+  [820,635,3.0],[770,700,2.8],[700,750,3.5],[615,783,2.4],[540,793,4.2],
+  [460,783,2.6],[378,748,3.0],[308,695,2.2],[256,625,3.6],[233,545,2.4],
+  [228,460,3.8],[245,375,2.6],[290,300,3.0]
+];
+sparkles.forEach(([x,y,r]) => {
+  ctx.save();
+  ctx.shadowColor = 'rgba(200,220,255,0.9)';
+  ctx.shadowBlur = 10;
+  ctx.beginPath(); ctx.arc(x,y,r,0,Math.PI*2);
+  ctx.fillStyle = '#e8f0ff'; ctx.fill();
+  ctx.restore();
+});
+
+// ── TEXT ──
+ctx.textAlign = 'center';
+
+// Italic title quote
+ctx.save();
+ctx.shadowColor = 'rgba(160,180,255,0.8)';
+ctx.shadowBlur = 15;
+ctx.font = 'italic 36px Georgia, serif';
+ctx.fillStyle = '#d8e4ff';
+ctx.fillText('"Lav I Stap Ol Taem"', CX, 348);
+ctx.restore();
+
+// Main headline
+ctx.save();
+ctx.shadowColor = 'rgba(180,200,255,0.9)';
+ctx.shadowBlur = 20;
+ctx.font = 'bold 76px Georgia, serif';
+ctx.fillStyle = '#ffffff';
+ctx.fillText('PRE-ORDER', CX, 432);
+ctx.fillText('TODAY', CX, 520);
+ctx.restore();
+
+// Date
+ctx.save();
+ctx.shadowColor = 'rgba(160,180,255,0.6)';
+ctx.shadowBlur = 10;
+ctx.font = '600 30px Arial, sans-serif';
+ctx.letterSpacing = '3px';
+ctx.fillStyle = '#b8c8f0';
+ctx.fillText('AVAILABLE APRIL 17TH', CX, 580);
+ctx.restore();
+
+// Button
+ctx.save();
+ctx.beginPath();
+const bx=390, by=610, bw=300, bh=64, br=32;
+ctx.moveTo(bx+br,by); ctx.lineTo(bx+bw-br,by);
+ctx.arcTo(bx+bw,by,bx+bw,by+br,br);
+ctx.lineTo(bx+bw,by+bh-br);
+ctx.arcTo(bx+bw,by+bh,bx+bw-br,by+bh,br);
+ctx.lineTo(bx+br,by+bh);
+ctx.arcTo(bx,by+bh,bx,by+bh-br,br);
+ctx.lineTo(bx,by+br);
+ctx.arcTo(bx,by,bx+br,by,br);
+ctx.closePath();
+ctx.fillStyle = '#0d0828';
+ctx.fill();
+ctx.strokeStyle = 'rgba(180,190,240,0.5)';
+ctx.lineWidth = 1.5; ctx.stroke();
+ctx.font = 'bold 26px Arial, sans-serif';
+ctx.fillStyle = '#e0e8ff';
+ctx.shadowColor = 'rgba(180,200,255,0.5)';
+ctx.shadowBlur = 8;
+ctx.fillText('LINK IN BIO', CX, 650);
+ctx.restore();
+
+// Artist name
+ctx.save();
+ctx.shadowColor = 'rgba(160,180,255,0.7)';
+ctx.shadowBlur = 18;
+ctx.font = '300 52px Arial, sans-serif';
+ctx.fillStyle = '#c8d4f0';
+ctx.fillText('VANUELLA WATT', CX, 970);
+ctx.restore();
+
+// Awareness dots
+ctx.beginPath(); ctx.arc(388,1020,6,0,Math.PI*2);
+ctx.fillStyle='rgba(155,89,182,0.8)'; ctx.fill();
+ctx.beginPath(); ctx.arc(774,1020,6,0,Math.PI*2);
+ctx.fillStyle='rgba(127,179,211,0.8)'; ctx.fill();
+ctx.font='14px Arial'; ctx.fillStyle='rgba(180,170,220,0.6)';
+ctx.textAlign='left';
+ctx.fillText("Alzheimer's & Parkinson's Awareness", 404, 1025);
+
+function download() {
+  const a = document.createElement('a');
+  a.download = 'lav-i-stap-promo-1080.png';
+  a.href = c.toDataURL('image/png');
+  a.click();
+}
+</script>
+</body>
+</html>
