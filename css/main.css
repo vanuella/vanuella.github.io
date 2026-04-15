@@ -436,6 +436,24 @@ footer {
     animation: fadeInUp 1s ease-out 0.6s both;
 }
 
+.hero-video {
+    max-width: 760px;
+    margin: 0 auto var(--space-md);
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+    animation: fadeInUp 1s ease-out 0.7s both;
+}
+
+.hero-video iframe {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border: 0;
+}
+
 .hero-description {
     max-width: 700px;
     margin: 0 auto var(--space-lg);
